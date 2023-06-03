@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Aerolíneas-Luxx</title>
+</head>
+<body>
+    <!-- Encabezado del sitio-->
+    <header class="container-fluid encabezado">
+      <div class="row">
+        <h1 class="col-6">Aerolíneas-Luxx</h1><p class="col-6">El cielo es el Límite...</p>
+      </div>
+    </header>
+    <!-- Navegación del sitio-->
+    <nav class="navegacion navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropRegistro">
+              Registro
+            </button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropSesion">
+              Iniciar Sesion
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!--Modal registro-->
+    <div class="modal fade" id="staticBackdropRegistro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Portal de registro</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row mb-3">
+                <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="nombre" name="nombre">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="apellido" name="apellido">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="dni" class="col-sm-2 col-form-label">DNI</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="dni" name="dni">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-10">
+                  <input type="email" class="form-control" id="email" name="email">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="fecha-nacimiento" class="col-sm-2 col-form-label">Fecha de nacimiento</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="fecha-nacimiento" name="fecha-nacimiento">
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="pais" class="col-sm-2 col-form-label">País</label>
+                <div class="col-sm-10">
+                  <select class="form-select" id="pais" name="pais">
+                    <option value="">Seleccionar país</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Brasil">Brasil</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="México">México</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="provincia" class="col-sm-2 col-form-label">Provincia</label>
+                <div class="col-sm-10">
+                  <select class="form-select" id="provincia" name="provincia">
+                    <option value="">Seleccionar provincia</option>
+                    <option value="Buenos Aires">Buenos Aires</option>
+                    <option value="Córdoba">Córdoba</option>
+                    <option value="Santa Fe">Santa Fe</option>
+                    <option value="Mendoza">Mendoza</option>
+                    <option value="Tucumán">Tucumán</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-sm-10 offset-sm-2">
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="terminos-y-condiciones" name="terminos-y-condiciones">
+                    <label class="form-check-label" for="terminos-y-condiciones">Acepto los términos y condiciones</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-3">
+                <div class="col-sm-10 offset-sm-2">
+                  <button type="submit" class="btn btn-primary" id="registrarse" name="registrarse">Registrarse</button>
+                </div>
+              </div>
+            </form>            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Understood</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Modal iniciar sesion-->
+    <div class="modal fade" id="staticBackdropSesion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Portal de Iniciar Sesion</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="login-form">
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="remember-me" name="remember-me">
+                <label class="form-check-label" for="remember-me">Recordar contraseña</label>
+              </div>
+              <button type="submit" class="btn btn-primary" id="login" name="login">Ingresar</button>
+              <a href="#" id="forgot-password-link">¿Olvidaste tu contraseña?</a>
+            </form>            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Understood</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Portada del sitio web-->
+      <main class="container-fluid">
+        <!--Carousel de promociones-->
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="7000">
+            <img src="img/promocion-1.jpg" class="d-block w-100" alt="mendoza">
+          </div>
+          <div class="carousel-item" data-bs-interval="7000">
+            <img src="img/promocion-2.jpg" class="d-block w-100" alt="carlos paz">
+          </div>
+          <div class="carousel-item" data-bs-interval="7000">
+            <img src="img/promocion-3.jpg" class="d-block w-100" alt="cancun">
+          </div>
+          <div class="carousel-item" data-bs-interval="7000">
+            <img src="img/promocion-4.jpg" class="d-block w-100" alt="roma">
+          </div>
+          <div class="carousel-item" data-bs-interval="7000">
+            <img src="img/promocion-5.jpg" class="d-block w-100" alt="montevideo">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <!--Consulta de vuelos Panel de control-->
+      <section class="container">
+        <div class="row">
+          <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Vuelos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">CHECK IN</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Estado de Vuelo</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Mi reserva</a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!--Opciones de vuelo-->
+      <!-- Vuelo-->
+      <div class="container">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Ida
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Ida y Vuelta
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Multidestino
+          </label>
+        </div>
+      </div>
+
+      <!--Ida-->
+      <form class="container">
+        
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="row">
+              <label for="vueloInputOrigen" class="form-label">Origen</label>
+            </div>
+            <div class="row">
+              <input type="text" class="form-group" id="vueloInputOrigen" placeholder="Origen">
+            </div>
+          </div>
+  
+          <div class="col-lg-3">
+            <div class="row">
+              <label for="vueloInputDestino" class="form-label">Destino</label>
+            </div>
+            <div class="row">
+              <input type="text" class="form-group" id="vueloInputDestino" placeholder="Destino">
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div class="row">
+              <label for="vueloInputFecha" class="form-label">Fecha</label>
+            </div>
+            <div class="row">
+              <input type="date" class="form-group" id="vueloInputFecha" placeholder="Fecha">
+            </div>
+          </div>
+  
+          <div class="col-lg-3">
+            <div class="row">
+              <label for="vueloInputClase" class="form-label">Clase</label>
+            </div>
+            <div class="row">
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">BUSCAR VUELOS</button>
+      </form>
+      
+      <!--Ida y Vuelta-->
+      <form class="container">
+        
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="row">
+              <label for="vueloInputOrigen" class="form-label">Origen</label>
+            </div>
+            <div class="row">
+              <input type="text" class="form-group" id="vueloInputOrigen" placeholder="Origen">
+            </div>
+          </div>
+  
+          <div class="col-lg-3">
+            <div class="row">
+              <label for="vueloInputDestino" class="form-label">Destino</label>
+            </div>
+            <div class="row">
+              <input type="text" class="form-group" id="vueloInputDestino" placeholder="Destino">
+            </div>
+          </div>
+
+          <div class="col-lg-2">
+            <div class="row">
+              <label for="vueloInputFecha" class="form-label">Partida</label>
+            </div>
+            <div class="row">
+              <input type="date" class="form-group" id="vueloInputFecha" placeholder="Fecha">
+            </div>
+          </div>
+
+          <div class="col-lg-2">
+            <div class="row">
+              <label for="vueloInputFecha" class="form-label">Regreso</label>
+            </div>
+            <div class="row">
+              <input type="date" class="form-group" id="vueloInputFecha" placeholder="Fecha">
+            </div>
+          </div>
+  
+          <div class="col-lg-2">
+            <div class="row">
+              <label for="vueloInputClase" class="form-label">Clase</label>
+            </div>
+            <div class="row">
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">BUSCAR VUELOS</button>
+      </form>
+
+      <!--CHECK IN-->
+      <form class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="row">
+              <label for="exampleInputPassword1" class="form-label">Código de reserva</label>
+            </div>
+            <div class="row">
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ej: XDGUIT">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="row">
+              <label for="exampleInputPassword1" class="form-label">Pasajero/a</label>
+            </div>
+            <div class="row">
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Apellido">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <button type="submit" class="btn btn-primary">COMENZAR CHECK IN</button>
+          </div>
+        </div>
+          
+          <div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">He leído y acepto las condiciones sobre Mercancías peligrosas, Check-in Online y Equipaje de mano. Tiempos de antelación: CABOTAJE 48hs antes de la salida del vuelo. INTERNACIONAL 24hs antes de la salida del vuelo.</label>
+            </div>
+          </div>
+      </form>
+
+      <!--ESTADO DE VUELO-->
+      <div class="container">
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+          <label class="form-check-label" for="flexRadioDefault1">
+            Número de vuelo
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+          <label class="form-check-label" for="flexRadioDefault2">
+            Ruta
+          </label>
+        </div>
+      </div>
+
+      <!--Número de vuelo-->
+      <form class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="row">
+              <label for="exampleInputPassword1" class="form-label">Número de vuelo</label>
+            </div>
+            <div class="row">
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ej: 1234">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="row">
+              <label for="exampleInputPassword1" class="form-label">Fecha</label>
+            </div>
+            <div class="row">
+              <input type="date" class="form-control" id="exampleInputPassword1" placeholder="dd/mm/aaaa">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <button type="submit" class="btn btn-primary">CONSULTAR</button>
+          </div>
+        </div>
+      </form>
+
+      <!--Ruta-->
+      <form class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="row">
+              <label for="exampleInputPassword1" class="form-label">Origen</label>
+            </div>
+            <div class="row">
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Origen">
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="row">
+              <label for="exampleInputPassword1" class="form-label">Destino</label>
+            </div>
+            <div class="row">
+              <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Destino">
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="row">
+              <label for="exampleInputPassword1" class="form-label">Fecha</label>
+            </div>
+            <div class="row">
+              <input type="date" class="form-control" id="exampleInputPassword1" placeholder="aa/mm/aaaa">
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <button type="submit" class="btn btn-primary">CONSULTAR</button>
+          </div>
+        </div>
+      </form>
+
+      <!--Mi reserva-->
+      <form class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="row">
+              <label for="exampleInputPassword1" class="form-label">Código de reserva</label>
+            </div>
+            <div class="row">
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ej: XDGUIT">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="row">
+              <label for="exampleInputPassword1" class="form-label">Pasajero/a</label>
+            </div>
+            <div class="row">
+              <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Apellido">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <button type="submit" class="btn btn-primary">CONSULTAR MI RESERVA</button>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <!--Financiación-->
+    <section class="container-fluid financiacion">
+      <div class="row">
+        <label class="h2">Financiación</label>
+      </div>
+    </section>
+
+    <!--Destinos-->
+    <section class="container">
+      <nav class="nav">
+        <a class="nav-link" href="#">Destinos Nacionales</a>
+        <a class="nav-link" href="#">Destinos Internacionales</a>
+        <a class="nav-link" href="#">Destinos Regionales</a>
+      </nav>
+    </section>
+
+    <!--Destinos Nacionales-->
+    <div class="container">
+      <!--<div class="row row-cols-1 row-cols-md-3 g-4">-->
+      <div class="row">
+        <div class="col-3">
+          <div class="card w-100">
+            <img src="img/promocion-1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Desde Buenos Aires a Mendoza</h5>
+              <p class="card-text">Desde Buenos Aires a Mendoza</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card w-100">
+            <img src="img/promocion-2.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Desde Buenos Aires a Trelew</h5>
+              <p class="card-text">Desde Buenos Aires a Trelew</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card w-100">
+            <img src="img/promocion-1.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Desde Buenos Aires a Córdoba</h5>
+              <p class="card-text">Desde Buenos Aires a Córdoba</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card w-100">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Desde Buenos Aires a Neuquén</h5>
+              <p class="card-text">Desde Buenos Aires a Neuquén</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Destinos Internacionales-->
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Desde Buenos Aires a Mendoza</h5>
+              <p class="card-text">Desde Buenos Aires a New York</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Desde Buenos Aires a Trelew</h5>
+              <p class="card-text">Desde Buenos Aires a Cancún</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Desde Buenos Aires a Córdoba</h5>
+              <p class="card-text">Desde Buenos Aires a Madrid</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Desde Buenos Aires a Neuquén</h5>
+              <p class="card-text">Desde Buenos Aires a Roma</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Destinos Regionales-->
+    <div class="container">
+      <div class="row">
+        <div class="col-3">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Desde Buenos Aires a Mendoza</h5>
+              <p class="card-text">Desde Buenos Aires a Montevideo</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Desde Buenos Aires a Trelew</h5>
+              <p class="card-text">Desde Buenos Aires a Lima</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Desde Buenos Aires a Córdoba</h5>
+              <p class="card-text">Desde Buenos Aires a Bogotá</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="card h-100">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Desde Buenos Aires a Neuquén</h5>
+              <p class="card-text">Desde Buenos Aires a Brasilia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Servicios adicionales-->
+    <section class="container-fluid">
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <img src="img/servicio_adicionales.jpg" class="d-block w-100" alt="servicio_adicionales">
+        </div>
+        <!--servicios-->
+        <div class="col-lg-6 col-md-12">
+          <div class="row">
+            <h2 class="col-12">Servicios Adicionales</h2>
+          </div>
+          <div class="row">
+          <div class="col-4">
+            <i class="bi bi-bag-check-fill"></i>
+            <p>Compra Equipaje</p>
+          </div>
+          <div class="col-4">
+            <i class="bi bi-person-workspace"></i>
+            <p>Asistencia al viajero</p>
+          </div>
+          <div class="col-4">
+            <i class="bi bi-building"></i>
+            <p>Hoteles</p>
+          </div>
+          </div>
+          <div class="row">
+            <button class="col-12">Conocé más servicios</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Aerolineas Luux Plus-->
+    <section class="container-fluid">
+      <div class="row">
+        <!--luxx-plus-->
+        <div class="col-lg-6 col-md-12">
+          <div class="row">
+            <h2 class="col-12">Disfrutá de Aerolíneas Plus</h2>
+          </div>
+          <div class="row">
+          <div class="col-4">
+            <i class="bi bi-currency-exchange"></i>
+            <p>Canjeá Millas</p>
+          </div>
+          <div class="col-4">
+            <i class="bi bi-plus-circle-fill"></i>
+            <p>Sumá Millas</p>
+          </div>
+          <div class="col-4">
+            <i class="bi bi-star-fill"></i>
+            <p>Socios Elite</p>
+          </div>
+          </div>
+          <div class="row">
+            <button class="col-12">¡ Sumá Millas !</button>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-12">
+          <img src="img/aerolineas-luxx-plus.jpg" class="d-block w-100" alt="aerolineas-luxx-plus">
+        </div>
+      </dvi>
+    </section>
+
+    <!--Ayuda-->
+    <section class="container-fluid">
+      <h2>¿Necesitás ayuda con tu viaje?</h2>
+      <p>Encontrá toda la información que necesitás en nuestro centro de ayuda.</p>
+      <div class="container">
+        <div class="row">
+          <ul class="col-lg-3 col-md-6 col-sm-12">
+            <h3><a>Políticas de equipaje</a></h3>
+            <li>Franquicias de equipajes</li>
+            <li>Exceso de equipaje</li>
+            <li>Equipaje adicional</li>
+            <li>Artículos restringidos</li>
+          </ul>
+    
+          <ul class="col-lg-3 col-md-6 col-sm-12">
+            <h3><a>Información para tu viaje</a></h3>
+            <li>Asistencias</li>
+            <li>Niños y bebés</li>
+            <li>Mascotas</li>
+          </ul>
+    
+          <ul class="col-lg-3 col-md-6 col-sm-12">
+            <h3><a>Preguntas frecuentes</a></h3>
+            <li>Aerolíneas Look Plus</li>
+            <li>Check In</li>
+            <li>Reservas y Servicios</li>
+          </ul>
+    
+          <ul class="col-lg-3 col-md-6 col-sm-12">
+            <h3><a>Servicios e información importante</a></h3>
+            <li>Estado de vuelo</li>
+            <li>Cambios on line</li>
+            <li>Procedimiento de devolución de tasa aeroportuaria</li>
+            <li>Información importante para pasajeros ingresando a México</li>
+            <li>Información judicial-Pasajeros no show</li>
+            <li>Impuesto PAIS</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Enlaces sociales-->
+    <footer class="container">
+      <div class="row">
+        <!---Institucional-->
+        <div class="col-lg-6 col-md-12">
+          <h3>Institucional</h3>
+          <div class="row">
+            <ul class="col-6">
+              <li>Compañía</li>
+              <li>Contenidos Institucionales</li>
+              <li>Proveedor</li>
+            </ul>
+            <ul class="col-6">
+              <li>SkyTeam</li>
+              <li>Aerolíneas</li>
+              <li>Somos AR</li>
+            </ul>
+          </div>
+        </div>
+        <!--Comunicate con nosotros-->
+        <div class="col-lg-6 col-md-12">
+            <h3>Comunicate con nosotros</h3>
+            <div>
+              <h4>Contact Center:</h4>
+              <p>0810-222-86527 Lun a Vie de 8 a 20hs. Sáb, Dom y feriados de 8 a 14 hs.</p>
+            </div>
+            <div>
+              <h4>WhatsApp</h4>
+              <p>0810-222-86527 Lun a Vie de 8 a 20hs. Sáb, Dom y feriados de 8 a 14 hs.</p>
+            </div>
+        </div>
+
+        <!--Suscribirme-->
+        <div class="col-lg-6 col-md-12">
+          <p>Suscribite para recibir nuestras promociones</p>
+          <button>Suscribirme</button>
+        </div>
+
+        <!--Links-->
+        <div class="col-lg-6 col-md-12">
+          <div>
+            <h4>Facebook</h4>
+            <a>Haciendo click aquí</a>
+          </div>
+          <div>
+            <h4>Sucursales y aeropuertos</h4>
+            <a>ingresando aquí</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <p class="col-12">Aerolíneas Look</p>
+      </div>
+      <div class="row">
+        <p class="col-12">Legales y condiciones Generales de Transporte</p>
+      </div>
+      <div class="row">
+        <p class="col-12"><i class="bi bi-qr-code"></i></p>
+      </div>
+      <div class="row">
+        <p class="col-12">Sitio Oficial de Aerolineas Look S.A</p>
+      </div>
+      <div class="row">
+        <p class="col-12">1996-2023</p>
+      </div>
+    </footer>
+</body>
+</html>
