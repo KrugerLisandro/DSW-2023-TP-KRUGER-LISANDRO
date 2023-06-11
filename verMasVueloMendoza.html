@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+		crossorigin="anonymous"></script>
+	<title>VerMasVueloMendoza</title>
+</head>
+
+<body>
+	<main class="container">
+		<section class="row">
+			<h1>Detalle de Producto</h1>
+			<div class="row">
+				<div id="carouselExample" class="carousel slide col-lg-8 col-md-12">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<img src="img/promocion-1.jpg" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="img/promocion-2.jpg" class="d-block w-100" alt="...">
+						</div>
+						<div class="carousel-item">
+							<img src="img/promocion-3.jpg" class="d-block w-100" alt="...">
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+						data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+						data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
+				<div class="col-lg-4 col-md-12">
+					<h2 class="row">¡Vuela a Mendoza con descuentos increíbles en vuelos de primera categoría!</h2>
+					<p class="row">¿Quieres visitar la hermosa ciudad de Mendoza? ¡Aprovecha nuestras promociones de
+						vuelos de primera categoría con descuentos increíbles! Descubre los viñedos, la cultura y la
+						belleza natural de Mendoza con la comodidad y el lujo de nuestros vuelos de primera categoría.
+						¡No te pierdas esta oportunidad única de viajar a Mendoza con estilo!</p>
+					<div class="row">
+						<!---->
+						<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+							<li class="col-2 nav-item" role="presentation">
+								<button class="btn active" id="pills-Ida-tab" data-bs-toggle="pill"
+									data-bs-target="#pills-Ida" type="button" role="tab" aria-controls="pills-Ida"
+									aria-selected="true">
+									Ida
+								</button>
+							</li>
+							<li class="col-2 nav-item" role="presentation">
+								<button class="btn" id="pills-Ida_y_Vuelta-tab" data-bs-toggle="pill"
+									data-bs-target="#pills-Ida_y_Vuelta" type="button" role="tab"
+									aria-controls="pills-Ida_y_Vuelta" aria-selected="false">
+									Ida y Vuelta
+								</button>
+							</li>
+						</ul>
+						<div class="tab-content" id="pills-tabContent">
+							<div class="tab-pane fade show active" id="pills-Ida" role="tabpanel"
+								aria-labelledby="pills-Ida-tab" tabindex="0">
+								<!--Ida-->
+								<form class="container">
+									<div class="row d-flex">
+										<div class="col-lg-12">
+											<div class="form-floating mb-3">
+												<input type="date" class="form-control form-control-lg"
+													id="vueloInputFecha" placeholder="Fecha">
+												<label for="vueloInputFecha" class="form-label">Fecha</label>
+											</div>
+										</div>
+										<div class="col-lg-12">
+											<div class="form-floating mb-3">
+												<select class="form-select form-control-lg" id="vueloInputClase"
+													aria-label="Clase">
+													<option selected>Seleccione el tipo de Clase</option>
+													<option value="economy">Economy</option>
+													<option value="premium-economy">Premium Economy</option>
+													<option value="business">Business</option>
+												</select>
+												<label for="vueloInputClase" class="form-label">Clase</label>
+											</div>
+										</div>
+									</div>
+									<br>
+									<button class="col-6 btn btn-success">Comprar</button>
+								</form>
+							</div>
+							<div class="tab-pane fade" id="pills-Ida_y_Vuelta" role="tabpanel"
+								aria-labelledby="pills-Ida_y_Vuelta-tab" tabindex="0">
+								<!--Ida y Vuelta-->
+								<form class="container">
+									<div class="row d-flex">
+										<div class="col-lg-12">
+											<div class="form-floating mb-3">
+												<input type="date" class="form-control form-control-lg"
+													id="vueloInputPartida" placeholder="Partida">
+												<label for="vueloInputPartida" class="form-label">Partida</label>
+											</div>
+										</div>
+										<div class="col-lg-12">
+											<div class="form-floating mb-3">
+												<input type="date" class="form-control form-control-lg"
+													id="vueloInputRegreso" placeholder="Regreso">
+												<label for="vueloInputRegreso" class="form-label">Regreso</label>
+											</div>
+										</div>
+										<div class="col-lg-12">
+											<div class="form-floating mb-3">
+												<select class="form-select form-control-lg" id="vueloInputClase"
+													aria-label="Clase">
+													<option selected>Seleccione el tipo de Clase</option>
+													<option value="economy">Economy</option>
+													<option value="premium-economy">Premium Economy</option>
+													<option value="business">Business</option>
+												</select>
+												<label for="vueloInputClase" class="form-label">Clase</label>
+											</div>
+										</div>
+									</div>
+									<br>
+									<button class="col-6 btn btn-success">Comprar</button>
+								</form>
+							</div>
+						</div>
+						<!---->
+
+
+						<a class="col-6 btn btn-danger" href="index.html">Volver al index.html</a>
+						<button class="col-6 btn btn-success">Comprar</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="row">
+			<h2>Preguntas Frecuentes</h2>
+			<p>
+				<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+					aria-expanded="false" aria-controls="collapseExample">
+					Link with href
+				</a>
+				<button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+					data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+					Button with data-bs-target
+				</button>
+			</p>
+			<div class="collapse" id="collapseExample">
+				<div class="card card-body">
+					Some placeholder content for the collapse component. This panel is hidden by default but revealed
+					when the user activates the relevant trigger.
+				</div>
+			</div>
+		</section>
+		<section class="row">
+			<h3>Productos Destacados</h3>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="card">
+						<img src="producto1.jpg" class="card-img-top" alt="Producto 1">
+						<div class="card-body">
+							<h5 class="card-title">Producto 1</h5>
+							<p class="card-text">Breve descripción del producto 1.</p>
+							<a href="#" class="btn btn-primary">Ver más</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<img src="producto2.jpg" class="card-img-top" alt="Producto 2">
+						<div class="card-body">
+							<h5 class="card-title">Producto 2</h5>
+							<p class="card-text">Breve descripción del producto 2.</p>
+							<a href="#" class="btn btn-primary">Ver más</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card">
+						<img src="producto3.jpg" class="card-img-top" alt="Producto 3">
+						<div class="card-body">
+							<h5 class="card-title">Producto 3</h5>
+							<p class="card-text">Breve descripción del producto 3.</p>
+							<a href="#" class="btn btn-primary">Ver más</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+</body>
+
+</html>

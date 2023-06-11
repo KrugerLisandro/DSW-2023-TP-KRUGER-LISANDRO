@@ -1,17 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
 
-/* https://colorhunt.co/palette/27374d526d829db2bfdde6ed */
+/* 
+Paleta de colores principal.
+https://colorhunt.co/palette/111f4df2f4f7e43a19020205
+https://colorhunt.co/palette/000000cf0a0adc5f00eeeeee
+*/
 
 body{
     font-family: 'Lato', sans-serif;
-    color: #181717;
-    background-color: #DDE6ED;
+    background-color: #FCFAF1;
+    color: #020205;
 }
 
 /*PRESENTACION*/
 .presentacion{
-    
+    text-shadow: 2px 2px 4px #fff; /*Sombra al texto*/
+    background-image: url(img/fondo-2.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
 .presentacion h1 {
@@ -25,23 +33,210 @@ body{
     right: 1rem;
 }
 
-/*NAVEGACION*/
-.navegacion-menu{
-    background-color: #DDE6ED;
+.image-text-container {
+    width: 720px; /* establece un ancho fijo */
+    display: flex; /* utiliza el modelo de caja flexible para asegurarse de que el texto y la imagen estén lado a lado */
+    align-items: center; /* centra verticalmente el contenido dentro del contenedor */
+    justify-content: center; /* centra horizontalmente el contenido dentro del contenedor */
+    margin:0 auto; /* centra el contenedor horizontalmente */
 }
 
-/*HOME*/
-/*PRESENTACION-PROMOCIONES*/
-.home-presentaciones {
-    height: 550px; /* Establece la altura deseada del carousel-inner */
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-caption p {
+    word-wrap: break-word;
+}  
+
+.image-text-container {
+    /* ... */
+    overflow: hidden;
 }
   
-.home-presentaciones img {
-    height: 100%; /* Establece la altura de la imagen al 100% */
-    width: 100%; /* Establece el ancho de la imagen al 100% */
+.carousel-control-prev-icon{
+    background-color: #111F4D;
+    border-radius: 5px;
 }
 
-/*FINANCIACION*/
-.financiacion{
-    background-color: #99d0eb;;
+.carousel-control-next-icon{
+    background-color: #111F4D;
+    border-radius: 5px;
 }
+
+.promocion-detalles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*Es una propiedad de CSS que se usa para centrar un elemento tanto horizontal como verticalmente dentro de su contenedor*/
+}
+
+/*NAVEGACION*/
+.navegacion-menu{
+    background-color: #FCFAF1;
+}
+
+.navegacion-menu a{
+    color: #020205;
+}
+
+.navegacion-menu a:hover{
+   background-color: #111F4D;
+   color: #FCFAF1;
+    border-radius: 5px;
+}
+
+.button-nav:hover{
+    background-color: #06113C;
+    color: #FF8C32;
+    border-radius: 5px;
+}
+/*HOME*/
+/*PRESENTACION-PROMOCIONES*/
+.home-presentacion img {
+    width: 100%;
+    height: auto;
+} 
+
+/*CONSULTA DE PASAJES*/
+.consulta-pasaje-presentacion{
+    background-color: #DDDDDD;
+    margin: 20px auto;
+    padding: 20px 5px;
+}
+
+.consulta-pasaje-presentacion .btn{
+    background-color: #111F4D;
+    color: #EEEEEE;
+
+    
+}
+
+.consulta-pasaje-presentacion .btn:hover{
+    background-color: #111F4D;
+    color: #DC5F00;
+}
+
+/*DESTINOS - CATEGORIAS*/
+.destinos-presenteacion{
+    background-color: #DDDDDD;
+    margin: 20px auto;
+    padding: 20px 10px;
+}
+
+.destinos-presenteacion .btn{
+    background-color: #111F4D;
+    color: #EEEEEE;
+}
+
+.destinos-presenteacion .btn:hover{
+    background-color: #DC5F00;
+    color: #020205;
+}
+
+.card-ajustar-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/*
+La propiedad CSS object-fit: cover es utilizada para ajustar el tamaño de una imagen dentro de un contenedor, manteniendo su relación de aspecto, y recortando la imagen si es necesario para ajustarla al contenedor sin dejar un espacio vacío.
+
+Cuando se utiliza object-fit: cover, la imagen se ajusta para cubrir el contenedor sin deformarla, y se recorta si es necesario para que la imagen tenga las mismas proporciones que el contenedor. Esto significa que puede haber parte de la imagen que no se verá debido al recorte.
+
+En el código CSS que se proporcionó en la respuesta anterior, object-fit: cover se utilizó para asegurarse de que las imágenes en las cards encajen en el tamaño fijo que se estableció para ellas con la clase personalizada "card-img-custom". Esto significa que las imágenes se recortarán si es necesario para ajustarlas al tamaño fijo, pero mantendrán su relación de aspecto.
+*/
+
+/*SERVICIOS ADICIONALES*/
+.item-servicio {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  margin-top: 100px;
+}
+
+.item-servicio .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-servicio .item i {
+  margin-bottom: 8px;
+}
+
+.item-servicio .item p {
+  margin-bottom: 8px;
+}
+
+/*TAMAÑO DE LOS ICONOS*/
+.tam-icon-serv{
+    font-size: 30px;
+}
+
+/*SERVICIOS LUXX PLUS*/
+.item-Luxx{
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  margin-top: 100px;
+}
+
+.item-Luxx .item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-Luxx .item i {
+  margin-bottom: 8px;
+}
+
+.item-Luxx .item p {
+  margin-bottom: 8px;
+}
+
+/*TAMAÑO DE LOS ICONOS*/
+.tam-icon-luxx{
+    font-size: 30px;
+}
+
+/*SECCION AYUDA*/
+.ayuda-presentacion{
+    background-color: #111F4D;
+    color: #EEEEEE;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*SECCION ENLACES SOCIALES Y CONTACTOS*/
+
+.enlaces_sociales-contactos{
+    background-color: #F2F4F7;
+    color: #111F4D;
+}
+
+.remover li{
+    list-style-type: none;
+}
+
+.tam-icon-suscrib{
+    font-size: 20px;
+}
+
+/*Disminuir el tamaño*/
+.min-tam{
+    text-align: center;
+    font-size: 10px;
+}
+
+

@@ -37,9 +37,6 @@
             <a class="nav-link" aria-current="page" href="#HomePresentacion">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#SeccionFinanciacion">Financiación</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#SeccionDestinos">Destino</a>
           </li>
           <li class="nav-item">
@@ -56,13 +53,13 @@
             <a class="nav-link" aria-current="page" href="#SeccionContactos">Contactos</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal"
-            data-bs-target="#ModalFormRegistro">
+        <form class="d-flex">
+          <button type="button" class="btn button-nav me-2" data-bs-toggle="modal" data-bs-target="#ModalFormRegistro">
             Registro
           </button>
-          <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#ModalFormLogin">
-            Iniciar Sesion
+          <!-- Botón para abrir el modal -->
+          <button type="button" class="btn button-nav me-2" data-bs-toggle="modal" data-bs-target="#ModalFormLogin">
+            Iniciar sesión
           </button>
         </form>
       </div>
@@ -79,43 +76,49 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
+          <form class="was-validated" id="form-registro">
             <div class="row mb-3">
               <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="nombre" name="nombre" />
+                <input type="text" class="form-control" id="nombre" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-title="Este campo es obligatorio" required></input>
               </div>
             </div>
             <div class="row mb-3">
               <label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="apellido" name="apellido" />
+                <input type="text" class="form-control" id="apellido" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-title="Este campo es obligatorio" required></input>
               </div>
             </div>
             <div class="row mb-3">
               <label for="dni" class="col-sm-2 col-form-label">DNI</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="dni" name="dni" />
+                <input type="number" class="form-control" id="dni" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-title="Este campo es obligatorio" required></input>
               </div>
             </div>
             <div class="row mb-3">
-              <label for="email" class="col-sm-2 col-form-label">Email</label>
+              <label for="email" class="col-sm-2 col-form-label">E-mail</label>
               <div class="col-sm-10">
-                <input type="email" class="form-control" id="email" name="email" />
+                <input type="email" class="form-control" id="email" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-title="Este campo es obligatorio" required></input>
               </div>
             </div>
             <div class="row mb-3">
-              <label for="fecha-nacimiento" class="col-sm-2 col-form-label">Fecha
-                de nacimiento</label>
+              <label for="fechaNacimiento" class="col-sm-2 col-form-label">Fecha de Nacimiento</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" id="fecha-nacimiento" name="fecha-nacimiento" />
+                <input type="date" class="form-control" id="fechaNacimiento" data-bs-toggle="tooltip"
+                  data-bs-placement="top" data-bs-title="Este campo es obligatorio" required></input>
+                <div class="invalid-feedback" id="fechaNacimientoFeedback"></div>
               </div>
             </div>
             <div class="row mb-3">
               <label for="pais" class="col-sm-2 col-form-label">País</label>
               <div class="col-sm-10">
-                <select class="form-select" id="pais" name="pais">
-                  <option value>Seleccionar país</option>
+                <select class="form-select" id="pais" name="pais" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-title="Este campo es obligatorio" required>
+                  <option selected disabled value="">Seleccionar país</option>
                   <option value="Argentina">Argentina</option>
                   <option value="Brasil">Brasil</option>
                   <option value="Chile">Chile</option>
@@ -127,8 +130,9 @@
             <div class="row mb-3">
               <label for="provincia" class="col-sm-2 col-form-label">Provincia</label>
               <div class="col-sm-10">
-                <select class="form-select" id="provincia" name="provincia">
-                  <option value>Seleccionar provincia</option>
+                <select class="form-select" id="provincia" name="provincia" data-bs-toggle="tooltip"
+                  data-bs-placement="top" data-bs-title="Este campo es obligatorio" required>
+                  <option selected disabled value="">Seleccionar provincia</option>
                   <option value="Buenos Aires">Buenos Aires</option>
                   <option value="Córdoba">Córdoba</option>
                   <option value="Santa Fe">Santa Fe</option>
@@ -144,6 +148,7 @@
                     name="terminos-y-condiciones" />
                   <label class="form-check-label" for="terminos-y-condiciones">Acepto
                     los términos y condiciones</label>
+                  <div class="invalid-feedback" id="terminosFeedback"></div>
                 </div>
               </div>
             </div>
@@ -164,102 +169,161 @@
       </div>
     </div>
   </div>
-  <!--Modal, Formulario de iniciar sesion-->
-  <div class="modal fade" id="ModalFormLogin" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-    aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+
+  <!--Nuevo codigo inicio-->
+  <!-- Modal -->
+  <div class="modal fade" id="ModalFormLogin" tabindex="-1" aria-labelledby="ModalFormLoginLabel" aria-hidden="true">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="staticBackdropLabel">
-            Iniciar Sesion
-          </h1>
+          <h5 class="modal-title" id="ModalFormLoginLabel">Iniciar sesión</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form id="login-form">
+          <!-- Formulario de inicio de sesión -->
+          <form class="was-validated" id="form-login">
             <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="email" required />
+              <label for="emailLogin" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="emailLogin" data-bs-toggle="tooltip"
+                  data-bs-placement="top" data-bs-title="Este campo es obligatorio" required></input>
+              </div>
             </div>
             <div class="mb-3">
-              <label for="password" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="password" name="password" required />
+              <label for="contraseniaLogin" class="col-sm-2 col-form-label">Contraseña</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="contraseniaLogin" data-bs-toggle="tooltip"
+                  data-bs-placement="top" data-bs-title="Este campo es obligatorio" required></input>
+              </div>
             </div>
             <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="remember-me" name="remember-me" />
-              <label class="form-check-label" for="remember-me">Recordar
-                contraseña</label>
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Recordar contraseña</label>
             </div>
-            <button type="submit" class="btn btn-primary" id="login" name="login">
-              Ingresar
-            </button>
-            <a href="#" id="forgot-password-link">¿Olvidaste tu contraseña?</a>
+            <button type="button" class="btn btn-primary" id="login-button">Iniciar sesión</button>
+            <button type="button" class="btn btn-link" id="recuperar-password-button">¿Olvidaste tu contraseña?</button>
           </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            Cancelar
-          </button>
+          <!-- Formulario de recuperar contraseña -->
+          <form id="form-recuperar-password" style="display: none;">
+            <div class="mb-3">
+              <label for="exampleInputEmail2" class="form-label">Correo electrónico</label>
+              <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">Introduce tu correo electrónico para recuperar tu contraseña.</div>
+            </div>
+            <button type="button" class="btn btn-primary" id="password-button">Enviar contraseña</button>
+          </form>
         </div>
       </div>
     </div>
   </div>
 
-  <!--Home - Portada del sitio web-->
   <main class="container-fluid">
-    <!--Presentacion de las promociones-->
-    <div id="HomePresentacion" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner home-presentaciones">
-        <div class="carousel-item active" data-bs-interval="7000">
-          <img src="img/promocion-1.jpg" class="d-block w-100" alt="mendoza" />
-        </div>
-        <div class="carousel-item" data-bs-interval="7000">
-          <img src="img/promocion-2.jpg" class="d-block w-100" alt="carlos paz" />
-        </div>
-        <div class="carousel-item" data-bs-interval="7000">
-          <img src="img/promocion-3.jpg" class="d-block w-100" alt="cancun" />
-        </div>
-        <div class="carousel-item" data-bs-interval="7000">
-          <img src="img/promocion-4.jpg" class="d-block w-100" alt="roma" />
-        </div>
-        <div class="carousel-item" data-bs-interval="7000">
-          <img src="img/promocion-5.jpg" class="d-block w-100" alt="montevideo" />
-        </div>
+    <!-- probar algo nuevo-->
+    <section class="carousel slide" id="carouselMain">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="0" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="1" class="active" aria-current="true"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselMain" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#HomePresentacion" data-bs-slide="prev">
+      <!--Promocion 1-->
+      <div class="carousel-inner">
+        <div class="carousel-item">
+          <div class="image-text-container">
+            <img src="img/vuelo-nacional-1.jpg" class="d-block" alt="...">
+            <div class="carousel-caption d-flex flex-column promocion-detalles">
+              <h2>¡Descubre la belleza de Mendoza!</h2>
+              <p>Incluye visitas a los principales atractivos turísticos de la ciudad, como el Parque General San
+                Martín, el Cerro de la Gloria y la Plaza Independencia.</p>
+              <div class="row">
+                <div class="col-6 d-flex titulo-fin">
+                  <h4><del>17,760</del></h4>
+                </div>
+                <div class="col-6 d-flex justify-content-start">
+                  <h3>$12,432</h3>
+                </div>
+              </div>
+              <a class="btn btn-info" href="#SeccionDestinos">¡Comprá tu pasaje!</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item active">
+          <div class="image-text-container">
+            <img src="img/vuelo-nacional-1.jpg" class="d-block" alt="...">
+            <div class="carousel-caption d-flex flex-column promocion-detalles">
+              <h2>¡Descubre la Gran Manzana!</h2>
+              <p>Explora la ciudad de Nueva York con este paquete turístico que incluye visitas a los principales
+                atractivos turísticos de la ciudad, como el Empire State Building, Times Square y Central Park.</p>
+              <div class="row">
+                <div class="col-6 d-flex titulo-fin">
+                  <h4><del>250,0</del></h4>
+                </div>
+                <div class="col-6 d-flex justify-content-start">
+                  <h3>$12,432</h3>
+                </div>
+              </div>
+              <a class="btn btn-info" href="#SeccionDestinos">¡Comprá tu pasaje!</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="image-text-container">
+            <img src="img/vuelo-nacional-1.jpg" class="d-block" alt="...">
+            <div class="carousel-caption d-flex flex-column promocion-detalles">
+              <h2>¡Descubre la belleza de Montevideo!</h2>
+              <p>Explora la ciudad de Montevideo con este paquete turístico que incluye visitas a los principales
+                atractivos turísticos de la ciudad, como la Ciudad Vieja, el Mercado del Puerto y la Rambla de
+                Montevideo.</p>
+              <div class="row">
+                <div class="col-6 d-flex titulo-fin">
+                  <h4><del>17,760</del></h4>
+                </div>
+                <div class="col-6 d-flex justify-content-start">
+                  <h3>$12,432</h3>
+                </div>
+              </div>
+              <a class="btn btn-info" href="#SeccionDestinos">¡Comprá tu pasaje!</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselMain" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#HomePresentacion" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselMain" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-    </div>
-    <!--Panel de control, consultas-->
+    </section>
 
+    <!--Panel de control, consultas-->
     <!--Consulta del Estado del Pasaje-->
-    <section class="container">
-      <ul class="row nav nav-pills" id="HomePresentacion" role="tablist">
-        <li class="col-2 nav-item" role="presentation">
-          <button class="nav-link active" id="HomePresentacion" data-bs-toggle="pill" data-bs-target="#pills-Vuelos"
+    <section class="container consulta-pasaje-presentacion">
+      <ul class="row nav nav-pills mb-3" id="HomePresentacion" role="HomePresentacion">
+        <li class="col-2 nav-item" role="presentacion">
+          <button class="btn active" id="HomePresentacion" data-bs-toggle="pill" data-bs-target="#pills-Vuelos"
             type="button" role="tab" aria-controls="HomePresentacion" aria-selected="true">
             Vuelos
           </button>
         </li>
         <li class="col-2 nav-item" role="presentation">
-          <button class="nav-link" id="HomePresentacion" data-bs-toggle="pill" data-bs-target="#pills-CHECK_IN"
-            type="button" role="tab" aria-controls="HomePresentacion" aria-selected="false">
+          <button class="btn" id="HomePresentacion" data-bs-toggle="pill" data-bs-target="#pills-CHECK_IN" type="button"
+            role="tab" aria-controls="HomePresentacion" aria-selected="false">
             CHECK IN
           </button>
         </li>
         <li class="col-2 nav-item" role="presentation">
-          <button class="nav-link" id="HomePresentacion" data-bs-toggle="pill" data-bs-target="#pills-Estado_de_Vuelo"
+          <button class="btn" id="HomePresentacion" data-bs-toggle="pill" data-bs-target="#pills-Estado_de_Vuelo"
             type="button" role="tab" aria-controls="HomePresentacion" aria-selected="false">
             Estado de Vuelo
           </button>
         </li>
         <li class="col-2 nav-item" role="presentation">
-          <button class="nav-link" id="HomePresentacion" data-bs-toggle="pill" data-bs-target="#pills-Mi_reserva"
+          <button class="btn" id="HomePresentacion" data-bs-toggle="pill" data-bs-target="#pills-Mi_reserva"
             type="button" role="tab" aria-controls="HomePresentacion" aria-selected="false">
             Mi reserva
           </button>
@@ -270,24 +334,17 @@
           tabindex="0">
           <!--Tipos de pasajes-->
           <!-- Pasajes-->
-          <p>(1)</p>
           <section class="container">
             <ul class="row nav nav-pills mb-3 form-check" id="pills-tab" role="tablist">
               <li class="col-2 nav-item" role="presentation">
-                <!-- <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"> 
-                Se puede transformar un buton en un check debo agregar las clases correspondientes y el for y transformar el 
-                button en un label <label class="form-check-label" for="flexRadioDefault1">
-                Default radio </label>
-                -->
-                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-Ida"
+                <button class="btn active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-Ida"
                   type="button" role="tab" aria-controls="pills-home" aria-selected="true">
                   Ida
                 </button>
               </li>
               <li class="col-2 nav-item" role="presentation">
-                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                  data-bs-target="#pills-Ida_y_Vuelta" type="button" role="tab" aria-controls="pills-profile"
-                  aria-selected="false">
+                <button class="btn" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-Ida_y_Vuelta"
+                  type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
                   Ida y Vuelta
                 </button>
               </li>
@@ -295,98 +352,93 @@
             <div class="tab-content" id="pills-tabContent">
               <div class="tab-pane fade show active" id="pills-Ida" role="tabpanel" aria-labelledby="pills-home-tab"
                 tabindex="0">
-                <p>(1)</p>
                 <!--Ida-->
                 <form class="container">
-                  <div class="row">
+                  <div class="row d-flex">
                     <div class="col-lg-3">
-                      <div class="row">
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control form-control-lg" id="vueloInputOrigen"
+                          placeholder="Origen">
                         <label for="vueloInputOrigen" class="form-label">Origen</label>
                       </div>
-                      <div class="row">
-                        <input type="text" class="form-group" id="vueloInputOrigen" placeholder="Origen" />
-                      </div>
                     </div>
                     <div class="col-lg-3">
-                      <div class="row">
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control form-control-lg" id="vueloInputDestino"
+                          placeholder="Destino">
                         <label for="vueloInputDestino" class="form-label">Destino</label>
                       </div>
-                      <div class="row">
-                        <input type="text" class="form-group" id="vueloInputDestino" placeholder="Destino" />
-                      </div>
                     </div>
                     <div class="col-lg-3">
-                      <div class="row">
+                      <div class="form-floating mb-3">
+                        <input type="date" class="form-control form-control-lg" id="vueloInputFecha"
+                          placeholder="Fecha">
                         <label for="vueloInputFecha" class="form-label">Fecha</label>
                       </div>
-                      <div class="row">
-                        <input type="date" class="form-group" id="vueloInputFecha" placeholder="Fecha" />
-                      </div>
                     </div>
                     <div class="col-lg-3">
-                      <div class="row">
-                        <label for="vueloInputClase" class="form-label">Clase</label>
-                        <select name="seats" id="seats">
-                          <option>Seleccione el tipo de Clase</option>
+                      <div class="form-floating mb-3">
+                        <select class="form-select form-control-lg" id="vueloInputClase" aria-label="Clase">
+                          <option selected>Seleccione el tipo de Clase</option>
                           <option value="economy">Economy</option>
                           <option value="premium-economy">Premium Economy</option>
                           <option value="business">Business</option>
                         </select>
+                        <label for="vueloInputClase" class="form-label">Clase</label>
                       </div>
-                      <div class="row"></div>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-primary">
-                    BUSCAR VUELOS
-                  </button>
+                  <br>
+                  <button type="submit" class="btn">BUSCAR VUELOS</button>
                 </form>
               </div>
               <div class="tab-pane fade" id="pills-Ida_y_Vuelta" role="tabpanel" aria-labelledby="pills-profile-tab"
                 tabindex="0">
-                <p>(2)</p>
                 <!--Ida y Vuelta-->
                 <form class="container">
-                  <div class="row">
+                  <div class="row d-flex">
                     <div class="col-lg-3">
-                      <div class="row">
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control form-control-lg" id="vueloInputOrigen"
+                          placeholder="Origen">
                         <label for="vueloInputOrigen" class="form-label">Origen</label>
                       </div>
-                      <div class="row">
-                        <input type="text" class="form-group" id="vueloInputOrigen" placeholder="Origen" />
-                      </div>
                     </div>
                     <div class="col-lg-3">
-                      <div class="row">
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control form-control-lg" id="vueloInputDestino"
+                          placeholder="Destino">
                         <label for="vueloInputDestino" class="form-label">Destino</label>
                       </div>
-                      <div class="row">
-                        <input type="text" class="form-group" id="vueloInputDestino" placeholder="Destino" />
+                    </div>
+                    <div class="col-lg-2">
+                      <div class="form-floating mb-3">
+                        <input type="date" class="form-control form-control-lg" id="vueloInputPartida"
+                          placeholder="Partida">
+                        <label for="vueloInputPartida" class="form-label">Partida</label>
                       </div>
                     </div>
                     <div class="col-lg-2">
-                      <div class="row">
-                        <label for="vueloInputFecha" class="form-label">Partida</label>
-                      </div>
-                      <div class="row">
-                        <input type="date" class="form-group" id="vueloInputFecha" placeholder="Fecha" />
-                      </div>
-                    </div>
-                    <div class="col-lg-2">
-                      <div class="row">
-                        <label for="vueloInputFecha" class="form-label">Regreso</label>
-                      </div>
-                      <div class="row">
-                        <input type="date" class="form-group" id="vueloInputFecha" placeholder="Fecha" />
+                      <div class="form-floating mb-3">
+                        <input type="date" class="form-control form-control-lg" id="vueloInputRegreso"
+                          placeholder="Regreso">
+                        <label for="vueloInputRegreso" class="form-label">Regreso</label>
                       </div>
                     </div>
                     <div class="col-lg-2">
-                      <div class="row">
+                      <div class="form-floating mb-3">
+                        <select class="form-select form-control-lg" id="vueloInputClase" aria-label="Clase">
+                          <option selected>Seleccione el tipo de Clase</option>
+                          <option value="economy">Economy</option>
+                          <option value="premium-economy">Premium Economy</option>
+                          <option value="business">Business</option>
+                        </select>
                         <label for="vueloInputClase" class="form-label">Clase</label>
                       </div>
-                      <div class="row"></div>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-primary">
+                  <br>
+                  <button type="submit" class="btn">
                     BUSCAR VUELOS
                   </button>
                 </form>
@@ -395,59 +447,51 @@
           </section>
         </div>
         <div class="tab-pane fade" id="pills-CHECK_IN" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-          <p>(2)</p>
           <!--CHECK IN-->
           <form class="container">
-            <div class="row">
+            <div class="row d-flex">
               <div class="col-lg-4">
-                <div class="row">
-                  <label for="exampleInputPassword1" class="form-label">Código
-                    de reserva</label>
-                </div>
-                <div class="row">
-                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ej: XDGUIT" />
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control form-control-lg" id="vueloInputCodigoReserva"
+                    placeholder="Ej: XDGUIT">
+                  <label for="vueloInputCodigoReserva" class="form-label">Código de reserva</label>
                 </div>
               </div>
               <div class="col-lg-4">
-                <div class="row">
-                  <label for="exampleInputPassword1" class="form-label">Pasajero/a</label>
-                </div>
-                <div class="row">
-                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Apellido" />
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control form-control-lg" id="vueloInputApellido"
+                    placeholder="Apellido">
+                  <label for="vueloInputApellido" class="form-label">Pasajero/a</label>
                 </div>
               </div>
               <div class="col-lg-4">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-lg">
                   COMENZAR CHECK IN
                 </button>
               </div>
             </div>
-            <div>
-              <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-                <label class="form-check-label" for="exampleCheck1">He leído y
-                  acepto las condiciones sobre Mercancías
-                  peligrosas, Check-in Online y Equipaje de mano. Tiempos de
-                  antelación: CABOTAJE 48hs antes de la salida del vuelo.
-                  INTERNACIONAL 24hs antes de la salida del vuelo.</label>
-              </div>
+            <div class="form-check mt-3">
+              <input type="checkbox" class="form-check-input" id="vueloInputCondiciones">
+              <label class="form-check-label" for="vueloInputCondiciones">He leído y acepto las condiciones sobre
+                Mercancías peligrosas, Check-in Online y Equipaje de mano. Tiempos de antelación: CABOTAJE 48hs antes de
+                la salida del vuelo. INTERNACIONAL 24hs antes de la salida del vuelo.</label>
             </div>
           </form>
         </div>
         <div class="tab-pane fade" id="pills-Estado_de_Vuelo" role="tabpanel" aria-labelledby="pills-contact-tab"
           tabindex="0">
-          <p>(3)</p>
+
           <section class="container">
             <ul class="row nav nav-pills mb-3" id="pills-tab" role="tablist">
               <li class="col-2 nav-item" role="presentation">
-                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                <button class="btn active" id="pills-home-tab" data-bs-toggle="pill"
                   data-bs-target="#pills-Numero_de_Vuelo" type="button" role="tab" aria-controls="pills-home"
                   aria-selected="true">
                   Número de vuelo
                 </button>
               </li>
               <li class="col-2 nav-item" role="presentation">
-                <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-Ruta"
+                <button class="btn" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-Ruta"
                   type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
                   Ruta
                 </button>
@@ -456,71 +500,58 @@
             <div class="tab-content" id="pills-tabContent">
               <div class="tab-pane fade show active" id="pills-Numero_de_Vuelo" role="tabpanel"
                 aria-labelledby="pills-home-tab" tabindex="0">
-                <p>(1)</p>
                 <!--Número de vuelo-->
                 <form class="container">
-                  <div class="row">
-                    <div class="col-lg-4">
-                      <div class="row">
-                        <label for="exampleInputPassword1" class="form-label">Número
-                          de vuelo</label>
-                      </div>
-                      <div class="row">
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ej: 1234" />
+                  <div class="form-group row">
+                    <div class="col-sm mb-3">
+                      <div class="form-floating">
+                        <input type="text" class="form-control form-control-lg" id="vueloInputNumeroVuelo"
+                          placeholder="Ej: 1234">
+                        <label for="vueloInputNumeroVuelo" class="form-label">Número de vuelo</label>
                       </div>
                     </div>
-                    <div class="col-lg-4">
-                      <div class="row">
-                        <label for="exampleInputPassword1" class="form-label">Fecha</label>
-                      </div>
-                      <div class="row">
-                        <input type="date" class="form-control" id="exampleInputPassword1" placeholder="dd/mm/aaaa" />
+                    <div class="col-sm mb-3">
+                      <div class="form-floating">
+                        <input type="date" class="form-control form-control-lg" id="vueloInputFecha"
+                          placeholder="dd/mm/aaaa">
+                        <label for="vueloInputFecha" class="form-label">Fecha</label>
                       </div>
                     </div>
-                    <div class="col-lg-4">
-                      <button type="submit" class="btn btn-primary">
-                        CONSULTAR
-                      </button>
+                    <div class="col-sm mb-3">
+                      <button type="submit" class="btn btn-primary btn-lg btn-block">CONSULTAR</button>
                     </div>
                   </div>
                 </form>
               </div>
               <div class="tab-pane fade" id="pills-Ruta" role="tabpanel" aria-labelledby="pills-profile-tab"
                 tabindex="0">
-                <p>(2)</p>
                 <!--Ruta-->
                 <form class="container">
-                  <div class="row">
-                    <div class="col-lg-3">
-                      <div class="row">
-                        <label for="exampleInputPassword1" class="form-label">Origen</label>
-                      </div>
-                      <div class="row">
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Origen" />
-                      </div>
-                    </div>
-                    <div class="col-lg-3">
-                      <div class="row">
-                        <label for="exampleInputPassword1" class="form-label">Destino</label>
-                      </div>
-                      <div class="row">
-                        <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Destino" />
+                  <div class="form-group row">
+                    <div class="col-sm mb-3">
+                      <div class="form-floating">
+                        <input type="text" class="form-control form-control-lg" id="vueloInputOrigen"
+                          placeholder="Origen">
+                        <label for="vueloInputOrigen" class="form-label">Origen</label>
                       </div>
                     </div>
-                    <div class="col-lg-3">
-                      <div class="row">
-                        <label for="exampleInputPassword1" class="form-label">Fecha</label>
-                      </div>
-                      <div class="row">
-                        <input type="date" class="form-control" id="exampleInputPassword1" placeholder="aa/mm/aaaa" />
+                    <div class="col-sm mb-3">
+                      <div class="form-floating">
+                        <input type="text" class="form-control form-control-lg" id="vueloInputDestino"
+                          placeholder="Destino">
+                        <label for="vueloInputDestino" class="form-label">Destino</label>
                       </div>
                     </div>
-                    <div class="col-lg-3">
-                      <button type="submit" class="btn btn-primary">
-                        CONSULTAR
-                      </button>
+                    <div class="col-sm mb-3">
+                      <div class="form-floating">
+                        <input type="date" class="form-control form-control-lg" id="vueloInputFecha"
+                          placeholder="dd/mm/aaaa">
+                        <label for="vueloInputFecha" class="form-label">Fecha</label>
+                      </div>
                     </div>
-                  </div>
+                    <div class="col-sm mb-3">
+                      <button type="submit" class="btn btn-primary btn-lg btn-block">CONSULTAR</button>
+                    </div>
                 </form>
               </div>
             </div>
@@ -528,31 +559,25 @@
         </div>
         <div class="tab-pane fade" id="pills-Mi_reserva" role="tabpanel" aria-labelledby="pills-disabled-tab"
           tabindex="0">
-          <p>(4)</p>
           <!--Mi reserva-->
           <form class="container">
-            <div class="row">
-              <div class="col-lg-4">
-                <div class="row">
-                  <label for="exampleInputPassword1" class="form-label">Código
-                    de reserva</label>
-                </div>
-                <div class="row">
-                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ej: XDGUIT" />
+            <div class="form-group row">
+              <div class="col-sm mb-3">
+                <div class="form-floating">
+                  <input type="text" class="form-control form-control-lg" id="vueloInputReserva"
+                    placeholder="Ej: XFGUIT">
+                  <label for="vueloInputReserva" class="form-label">Código de reserva</label>
                 </div>
               </div>
-              <div class="col-lg-4">
-                <div class="row">
-                  <label for="exampleInputPassword1" class="form-label">Pasajero/a</label>
-                </div>
-                <div class="row">
-                  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Apellido" />
+              <div class="col-sm mb-3">
+                <div class="form-floating">
+                  <input type="text" class="form-control form-control-lg" id="vueloInputPasajero"
+                    placeholder="Apellido">
+                  <label for="vueloInputPasajero" class="form-label">Pasajero/a</label>
                 </div>
               </div>
-              <div class="col-lg-4">
-                <button type="submit" class="btn btn-primary">
-                  CONSULTAR MI RESERVA
-                </button>
+              <div class="col-sm mb-3">
+                <button type="submit" class="btn btn-primary btn-lg btn-block">CONSULTAR</button>
               </div>
             </div>
           </form>
@@ -561,168 +586,165 @@
     </section>
   </main>
 
-  <!--Seccion Financiación-->
-  <section class="container-fluid financiacion" id="SeccionFinanciacion" role="search">
-    <div class="row">
-      <label class="h2">Financiación</label>
-    </div>
-  </section>
-
-  <!--Seccion Destinos Con Comportamiento-->
-  <section class="container">
+  <!--Seccion Destinos-->
+  <section class="container destinos-presenteacion">
     <ul class="row nav nav-pills mb-3" id="SeccionDestinos" role="tablist">
       <li class="col-3 nav-item" role="presentation">
-        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-          data-bs-target="#pills-Destinos_Nacionales" type="button" role="tab" aria-controls="pills-home"
+        <button class="btn active" id="pills-Destinos_Nacionale-tab" data-bs-toggle="pill"
+          data-bs-target="#pills-Destinos_Nacionales" type="button" role="tab" aria-controls="pills-Destinos_Nacionale"
           aria-selected="true">
           Destinos Nacionales
         </button>
       </li>
       <li class="col-3 nav-item" role="presentation">
-        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-          data-bs-target="#pills-Destinos_Internacionales" type="button" role="tab" aria-controls="pills-profile"
-          aria-selected="false">
+        <button class="btn" id="pills-Destinos_Internacionales-tab" data-bs-toggle="pill"
+          data-bs-target="#pills-Destinos_Internacionales" type="button" role="tab"
+          aria-controls="pills-Destinos_Internacionales" aria-selected="true">
           Destinos Internacionales
         </button>
       </li>
       <li class="col-3 nav-item" role="presentation">
-        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-          data-bs-target="#pills-Destinos_Regionales" type="button" role="tab" aria-controls="pills-contact"
-          aria-selected="false">
+        <button class="btn" id="pills-Destinos_Regionales-tab" data-bs-toggle="pill"
+          data-bs-target="#pills-Destinos_Regionales" type="button" role="tab" aria-controls="pills-Destinos_Regionales"
+          aria-selected="true">
           Destinos Regionales
         </button>
       </li>
     </ul>
     <div class="tab-content" id="pills-tabContent">
-      <div class="tab-pane fade show active" id="pills-Destinos_Nacionales" role="tabpanel"
-        aria-labelledby="pills-home-tab" tabindex="0">
-        <p>(1)</p>
-        <div class="tab-pane fade show active" id="destinosNacionales">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="card w-100">
-                <img src="img/vuelo-nacional-1.jpg" class="card-img-top" alt="vuelo-nacional-1" />
-                <div class="card-body">
-                  <h5 class="card-title">Desde Buenos Aires a Mendoza</h5>
-                  <p class="card-text">Desde Buenos Aires a Mendoza</p>
-                </div>
+      <div class="tab-pane fade show active" id="pills-Destinos_Nacionales" role="tabNacionales"
+        aria-labelledby="pills-Destinos_Nacionale-tab" tabindex="0">
+        <!-- Destinos Nacionales-->
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card w-100">
+              <img src="img/vuelo-nacional-1.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-1" />
+              <div class="card-body">
+                <h5 class="card-title">Desde Buenos Aires a Mendoza</h5>
+                <p class="card-text">Desde Buenos Aires a Mendoza</p>
+                <a class="btn">Reserva</a>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="card w-100">
-                <img src="img/vuelo-nacional-2.jpg" class="card-img-top" alt="vuelo-nacional-2" />
-                <div class="card-body">
-                  <h5 class="card-title">Desde Buenos Aires a Trelew</h5>
-                  <p class="card-text">Desde Buenos Aires a Trelew</p>
-                </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card w-100">
+              <img src="img/vuelo-nacional-2.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-2" />
+              <div class="card-body">
+                <h5 class="card-title">Desde Buenos Aires a Trelew</h5>
+                <p class="card-text">Desde Buenos Aires a Trelew</p>
+                <a class="btn">Reserva</a>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="card w-100">
-                <img src="img/vuelo-nacional-3.jpg" class="card-img-top" alt="vuelo-nacional-3" />
-                <div class="card-body">
-                  <h5 class="card-title">Desde Buenos Aires a Córdoba</h5>
-                  <p class="card-text">Desde Buenos Aires a Córdoba</p>
-                </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card w-100">
+              <img src="img/vuelo-nacional-3.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-3" />
+              <div class="card-body">
+                <h5 class="card-title">Desde Buenos Aires a Córdoba</h5>
+                <p class="card-text">Desde Buenos Aires a Córdoba</p>
+                <a class="btn">Reserva</a>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="card w-100">
-                <img src="img/vuelo-nacional-4.jpg" class="card-img-top" alt="vuelo-nacional-4" />
-                <div class="card-body">
-                  <h5 class="card-title">Desde Buenos Aires a Neuquén</h5>
-                  <p class="card-text">Desde Buenos Aires a Neuquén</p>
-                </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card w-100">
+              <img src="img/vuelo-nacional-4.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-4" />
+              <div class="card-body">
+                <h5 class="card-title">Desde Buenos Aires a Neuquén</h5>
+                <p class="card-text">Desde Buenos Aires a Neuquén</p>
+                <a class="btn">Reserva</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="pills-Destinos_Internacionales" role="tabpanel" aria-labelledby="pills-profile-tab"
-        tabindex="0">
-        <p>(2)</p>
+      <div class="tab-pane fade show" id="pills-Destinos_Internacionales" role="tabInternacionales"
+        aria-labelledby="pills-Destinos_Internacionales-tab" tabindex="0">
         <!--Destinos Internacionales-->
-        <div class="tab-pane fade show active" id="destinosNacionales">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="card w-100">
-                <img src="img/vuelo-nacional-1.jpg" class="card-img-top" alt="vuelo-nacional-1" />
-                <div class="card-body">
-                  <h5 class="card-title">Desde Buenos Aires a New York</h5>
-                  <p class="card-text">Desde Buenos Aires a New York</p>
-                </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card w-100">
+              <img src="img/vuelo-nacional-1.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-1" />
+              <div class="card-body">
+                <h5 class="card-title">Desde Buenos Aires a New York</h5>
+                <p class="card-text">Desde Buenos Aires a New York</p>
+                <a class="btn">Reserva</a>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="card w-100">
-                <img src="img/vuelo-nacional-2.jpg" class="card-img-top" alt="vuelo-nacional-2" />
-                <div class="card-body">
-                  <h5 class="card-title">Desde Buenos Aires a Cancún</h5>
-                  <p class="card-text">Desde Buenos Aires a Cancún</p>
-                </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card w-100">
+              <img src="img/vuelo-nacional-2.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-2" />
+              <div class="card-body">
+                <h5 class="card-title">Desde Buenos Aires a Cancún</h5>
+                <p class="card-text">Desde Buenos Aires a Cancún</p>
+                <a class="btn">Reserva</a>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="card w-100">
-                <img src="img/vuelo-nacional-3.jpg" class="card-img-top" alt="vuelo-nacional-3" />
-                <div class="card-body">
-                  <h5 class="card-title">Desde Buenos Aires a Madrid</h5>
-                  <p class="card-text">Desde Buenos Aires a Madrid</p>
-                </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card w-100">
+              <img src="img/vuelo-nacional-3.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-3" />
+              <div class="card-body">
+                <h5 class="card-title">Desde Buenos Aires a Madrid</h5>
+                <p class="card-text">Desde Buenos Aires a Madrid</p>
+                <a class="btn">Reserva</a>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="card w-100">
-                <img src="img/vuelo-nacional-4.jpg" class="card-img-top" alt="vuelo-nacional-4" />
-                <div class="card-body">
-                  <h5 class="card-title">Desde Buenos Aires a Roma</h5>
-                  <p class="card-text">Desde Buenos Aires a Roma</p>
-                </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card w-100">
+              <img src="img/vuelo-nacional-4.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-4" />
+              <div class="card-body">
+                <h5 class="card-title">Desde Buenos Aires a Roma</h5>
+                <p class="card-text">Desde Buenos Aires a Roma</p>
+                <a class="btn">Reserva</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="tab-pane fade" id="pills-Destinos_Regionales" role="tabpanel" aria-labelledby="pills-contact-tab"
-        tabindex="0">
-        <p>(3)</p>
+      <div class="tab-pane fade show" id="pills-Destinos_Regionales" role="tabRegionales"
+        aria-labelledby="pills-Destinos_Regionales-tab" tabindex="0">
         <!--Destinos Regionales-->
-        <div class="tab-pane fade show active" id="destinosNacionales">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="card w-100">
-                <img src="img/vuelo-nacional-1.jpg" class="card-img-top" alt="vuelo-nacional-1" />
-                <div class="card-body">
-                  <h5 class="card-title">Desde Buenos Aires a Montevideo</h5>
-                  <p class="card-text">Desde Buenos Aires a Montevideo</p>
-                </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card w-100">
+              <img src="img/vuelo-nacional-1.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-1" />
+              <div class="card-body">
+                <h5 class="card-title">Desde Buenos Aires a Montevideo</h5>
+                <p class="card-text">Desde Buenos Aires a Montevideo</p>
+                <a class="btn">Reserva</a>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="card w-100">
-                <img src="img/vuelo-nacional-2.jpg" class="card-img-top" alt="vuelo-nacional-2" />
-                <div class="card-body">
-                  <h5 class="card-title">Desde Buenos Aires a Lima</h5>
-                  <p class="card-text">Desde Buenos Aires a Lima</p>
-                </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card w-100">
+              <img src="img/vuelo-nacional-2.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-2" />
+              <div class="card-body">
+                <h5 class="card-title">Desde Buenos Aires a Lima</h5>
+                <p class="card-text">Desde Buenos Aires a Lima</p>
+                <a class="btn">Reserva</a>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="card w-100">
-                <img src="img/vuelo-nacional-3.jpg" class="card-img-top" alt="vuelo-nacional-3" />
-                <div class="card-body">
-                  <h5 class="card-title">Desde Buenos Aires a Bogotá</h5>
-                  <p class="card-text">Desde Buenos Aires a Bogotá</p>
-                </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card w-100">
+              <img src="img/vuelo-nacional-3.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-3" />
+              <div class="card-body">
+                <h5 class="card-title">Desde Buenos Aires a Bogotá</h5>
+                <p class="card-text">Desde Buenos Aires a Bogotá</p>
+                <a class="btn">Reserva</a>
               </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="card w-100">
-                <img src="img/vuelo-nacional-4.jpg" class="card-img-top" alt="vuelo-nacional-4" />
-                <div class="card-body">
-                  <h5 class="card-title">Desde Buenos Aires a Brasilia</h5>
-                  <p class="card-text">Desde Buenos Aires a Brasilia</p>
-                </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="card w-100">
+              <img src="img/vuelo-nacional-4.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-4" />
+              <div class="card-body">
+                <h5 class="card-title">Desde Buenos Aires a Brasilia</h5>
+                <p class="card-text">Desde Buenos Aires a Brasilia</p>
+                <a class="btn">Reserva</a>
               </div>
             </div>
           </div>
@@ -732,7 +754,7 @@
   </section>
 
   <!-- Seccion Servicios adicionales-->
-  <section class="container" id="SeccionServiciosAdicionales">
+  <section class="container mt-3 mb-4" id="SeccionServiciosAdicionales">
     <div class="row">
       <!--Imagen Ilustrativa-->
       <div class="col-lg-6 col-md-12">
@@ -740,54 +762,54 @@
       </div>
       <!--Algunos Servicios adicionales-->
       <div class="col-lg-6 col-md-12">
-        <div class="row">
+        <div class="row text-center">
           <h2 class="col-12">Servicios Adicionales</h2>
         </div>
-        <div class="row">
-          <div class="col-4">
-            <i class="bi bi-bag-check-fill"></i>
+        <div class="row item-servicio">
+          <div class="col-4 item">
+            <i class="bi bi-bag-check-fill tam-icon-serv"></i>
             <p>Compra Equipaje</p>
           </div>
-          <div class="col-4">
-            <i class="bi bi-person-workspace"></i>
+          <div class="col-4 item">
+            <i class="bi bi-person-workspace tam-icon-serv"></i>
             <p>Asistencia al viajero</p>
           </div>
-          <div class="col-4">
-            <i class="bi bi-building"></i>
-            <p>Hoteles</p>
+          <div class="col-4 item">
+            <i class="bi bi-building tam-icon-serv"></i>
+            <p>Hoteles 5 Estrellas</p>
           </div>
         </div>
-        <div class="row">
-          <button class="col-12">Conocé más servicios</button>
+        <div class="row mt-4">
+          <a class="col-12 btn active">Conocé más servicios</a>
         </div>
       </div>
     </div>
   </section>
 
   <!--Seccion Aerolineas Luux Plus-->
-  <section class="container" id="SeccionLuxxPlus">
+  <section class="container mt-3 mb-4" id="SeccionLuxxPlus">
     <div class="row">
       <!--luxx-plus-->
       <div class="col-lg-6 col-md-12">
-        <div class="row">
+        <div class="row text-center">
           <h2 class="col-12">Disfrutá de Aerolíneas Luxx Plus</h2>
         </div>
-        <div class="row">
-          <div class="col-4">
-            <i class="bi bi-currency-exchange"></i>
+        <div class="row item-Luxx">
+          <div class="col-4 item">
+            <i class="bi bi-currency-exchange tam-icon-luxx"></i>
             <p>Canjeá Millas</p>
           </div>
-          <div class="col-4">
-            <i class="bi bi-plus-circle-fill"></i>
+          <div class="col-4 item">
+            <i class="bi bi-plus-circle-fill tam-icon-luxx"></i>
             <p>Sumá Millas</p>
           </div>
-          <div class="col-4">
-            <i class="bi bi-star-fill"></i>
+          <div class="col-4 item">
+            <i class="bi bi-star-fill tam-icon-luxx"></i>
             <p>Socios Elite</p>
           </div>
         </div>
-        <div class="row">
-          <button class="col-12">¡ Sumá Millas !</button>
+        <div class="row mt-4">
+          <button class="col-12 btn active">¡ Sumá Millas !</button>
         </div>
       </div>
       <div class="col-lg-6 col-md-12">
@@ -797,11 +819,11 @@
   </section>
 
   <!--Seccion Ayuda-->
-  <section class="container-fluid" id="SeccionAyuda">
-    <h2>¿Necesitás ayuda con tu viaje?</h2>
-    <p>
-      Encontrá toda la información que necesitás en nuestro centro de ayuda.
-    </p>
+  <section class="container-fluid mt-4 mb-3 ayuda-presentacion" id="SeccionAyuda">
+    <div class="row">
+      <h2 class="col-12 text-center">¿Necesitás ayuda con tu viaje?</h2>
+      <p class="col-12 text-center">Encontrá toda la información que necesitás en nuestro centro de ayuda.</p>
+    </div>
     <div class="container">
       <div class="row">
         <ul class="col-lg-3 col-md-6 col-sm-12">
@@ -840,12 +862,12 @@
   </section>
 
   <!-- Seccion Enlaces sociales y contactos-->
-  <footer class="container" id="SeccionContactos">
+  <footer class="container enlaces_sociales-contactos" id="SeccionContactos">
     <div class="row">
       <!--Institucional-->
-      <div class="col-lg-6 col-md-12">
+      <div class="col-lg-6 col-md-12 remover">
         <h3>Institucional</h3>
-        <div class="row">
+        <div class="row no-item">
           <ul class="col-6">
             <li>Compañía</li>
             <li>Contenidos Institucionales</li>
@@ -860,57 +882,125 @@
       </div>
       <!--Comunicate con nosotros-->
       <div class="col-lg-6 col-md-12">
-        <h3>Comunicate con nosotros</h3>
-        <div>
-          <h4>Contact Center:</h4>
-          <p>
-            0810-222-86527 Lun a Vie de 8 a 20hs. Sáb, Dom y feriados de 8 a
-            14 hs.
-          </p>
+        <div class="row">
+          <h3 class="col-12"><i class="bi bi-person-workspace"></i> Comunicate con nosotros</h3>
         </div>
-        <div>
-          <h4>WhatsApp</h4>
-          <p>
-            0810-222-86527 Lun a Vie de 8 a 20hs. an Sáb, Dom y feriados de 8
-            a 14 hs.
-          </p>
+        <div class="row">
+          <div class="col-6">
+            <h4><i class="bi bi-telephone-plus-fill"></i> Contact Center:</h4>
+            <p>0810-222-86527 Lun a Vie de 8 a 20hs. Sáb, Dom y feriados de 8 a 14 hs.</p>
+          </div>
+          <div class="col-6">
+            <h4><i class="bi bi-whatsapp"></i> WhatsApp</h4>
+            <p> 0810-222-86527 Lun a Vie de 8 a 20hs. an Sáb, Dom y feriados de 8 a 14 hs.</p>
+          </div>
         </div>
       </div>
 
-      <!--Suscribirme-->
+      <!--Suscribirme Suscribirme-->
       <div class="col-lg-6 col-md-12">
-        <p>Suscribite para recibir nuestras promociones</p>
-        <button>Suscribirme</button>
+        <p><i class="tam-icon-suscrib bi bi-envelope-plus-fill"></i> Suscribite para recibir nuestras promociones</p>
+        <p>
+          <button class="btn active"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Suscribirme
+          </button>
+        </p>
+        <div class="container collapse" id="collapseExample">
+          <div class="row card card-body">
+            <form>
+              <div class="col-12 mb-3">
+                <label for="nombreSuscrib" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombreSuscrib" placeholder="Ingresa tu nombre" required>
+              </div>
+              <div class="col-12 mb-3">
+                <label for="correoSuscrib" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="correoSuscrib" placeholder="Ingresa tu correo electrónico" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Suscribirse</button>
+            </form>
+          </div>
+        </div>
       </div>
 
       <!--Links-->
       <div class="col-lg-6 col-md-12">
-        <div>
-          <h4>Facebook</h4>
-          <a>Haciendo click aquí</a>
-        </div>
-        <div>
-          <h4>Sucursales y aeropuertos</h4>
-          <a>ingresando aquí</a>
+        <div class="row">
+          <div class="col-4">
+            <h4><i class="bi bi-facebook"></i> Facebook</h4>
+            <a>Haciendo click aquí</a>
+          </div>
+          <div class="col-8">
+            <h4><i class="bi bi-airplane-fill"></i> Sucursales y aeropuertos</h4>
+            <a>ingresando aquí</a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="row">
-      <p class="col-12">Aerolíneas Look</p>
-    </div>
-    <div class="row">
-      <p class="col-12">Legales y condiciones Generales de Transporte</p>
-    </div>
-    <div class="row">
+    <div class="row min-tam">
+      <p class="col-12"><i class="bi bi-stars"></i> Aerolíneas Look <i class="bi bi-stars"></i></p>
+      <p class="col-12">Legales y condiciones Generales de Transporte !</i></p>
       <p class="col-12"><i class="bi bi-qr-code"></i></p>
-    </div>
-    <div class="row">
-      <p class="col-12">Sitio Oficial de Aerolineas Look S.A</p>
-    </div>
-    <div class="row">
+      <p class="col-12">Sitio Oficial de Aerolineas Look S.A <i class="bi bi-check-circle"></i></p>
       <p class="col-12">1996-2023</p>
     </div>
   </footer>
 
 </body>
+
+<!--Inicializando los tooltip-->
+<script>
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+    return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+</script>
+
+<!--Script para validar la fecha de nacimiento y los terminos y condiciones del formulario de registro-->
+<script>
+  const form = document.getElementById('form-registro');
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    // Se ejecutaran las validaciones
+    const fechaNacimiento = document.getElementById('fechaNacimiento').value;
+    const hoy = new Date();
+    const fechaNacimientoDate = new Date(fechaNacimiento);
+    const edad = hoy.getFullYear() - fechaNacimientoDate.getFullYear();
+    const mes = hoy.getMonth() - fechaNacimientoDate.getMonth();
+    if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimientoDate.getDate())) {
+      //Si la persona aún no ha cumplido años en el mes actual, entonces se resta 1 a la edad.
+      edad--;
+    }
+    if (edad < 18) {
+      document.getElementById('fechaNacimiento').classList.add('is-invalid');
+      document.getElementById('fechaNacimientoFeedback').textContent = 'Debes ser mayor de edad';
+    } else {
+      document.getElementById('fechaNacimiento').classList.remove('is-invalid');
+      document.getElementById('fechaNacimientoFeedback').textContent = '';
+    }
+    const terminos = document.getElementById('terminos-y-condiciones');
+    if (!terminos.checked) {
+      document.getElementById('terminos-y-condiciones').classList.add('is-invalid');
+      document.getElementById('terminosFeedback').textContent = 'Debes aceptar los términos y condiciones';
+    } else {
+      document.getElementById('terminos-y-condiciones').classList.remove('is-invalid');
+      document.getElementById('terminosFeedback').textContent = '';
+    }
+  });
+</script>
+
+<!--Script para recuperar la contraseña-->
+<script>
+  // Evento de clic para el botón de recuperar contraseña
+  document.getElementById("recuperar-password-button").addEventListener("click", function () {
+    document.getElementById("form-login").style.display = "none";
+    document.getElementById("form-recuperar-password").style.display = "block";
+  });
+  // Evento de clic para el botón de enviar contraseña
+  document.getElementById("password-button").addEventListener("click", function () {
+    // Aquí se puede agregar la lógica para enviar la contraseña al correo electrónico del usuario
+    document.getElementById("form-recuperar-password").style.display = "none";
+    document.getElementById("form-login").style.display = "block";
+    document.getElementById("ModalFormLogin").modal("hide");
+  });
+</script>
 </html>
