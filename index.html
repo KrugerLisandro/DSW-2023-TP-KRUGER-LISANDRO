@@ -37,17 +37,53 @@
             <a class="nav-link" aria-current="page" href="#HomePresentacion">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#SeccionDestinos">Destino</a>
+            <div class="dropdown">
+              <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Destino
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#SeccionDestinos">Nacionales</a></li>
+                <li><a class="dropdown-item" href="#SeccionDestinos">Internacionales</a></li>
+                <li><a class="dropdown-item" href="#SeccionDestinos">Regionales</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#SeccionServiciosAdicionales">Servicios Adicionales</a>
+            <div class="dropdown">
+              <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Servicios Adicionales
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#SeccionServiciosAdicionales">Compra Equipaje</a></li>
+                <li><a class="dropdown-item" href="#SeccionServiciosAdicionales">Asistencia al viajero</a></li>
+                <li><a class="dropdown-item" href="#SeccionServiciosAdicionales">Hoteles 5 Estrellas</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#SeccionLuxxPlus">Aerolíneas
-              Luxx Plus</a>
+            <div class="dropdown">
+              <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Disfrutá de Aerolíneas Luxx Plus
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#SeccionLuxxPlus">Canjeá Millas</a></li>
+                <li><a class="dropdown-item" href="#SeccionLuxxPlus">Sumá Millas</a></li>
+                <li><a class="dropdown-item" href="#SeccionLuxxPlus">Socios Elite</a></li>
+              </ul>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#SeccionAyuda">Ayuda</a>
+          <li class="nav-iteam">
+            <div class="dropdown">
+              <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Ayuda
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#SeccionAyuda">Políticas de equipaje</a></li>
+                <li><a class="dropdown-item" href="#SeccionAyuda">Información para tu viaje</a></li>
+                <li><a class="dropdown-item" href="#SeccionAyuda">Preguntas frecuentes</a></li>
+                <li><a class="dropdown-item" href="#SeccionAyuda">Servicios e información importante</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#SeccionContactos">Contactos</a>
@@ -204,7 +240,7 @@
             <button type="button" class="btn btn-link" id="recuperar-password-button">¿Olvidaste tu contraseña?</button>
           </form>
           <!-- Formulario de recuperar contraseña -->
-          <form id="form-recuperar-password" style="display: none;">
+          <form id="form-recuperar-password" class="hidden">
             <div class="mb-3">
               <label for="exampleInputEmail2" class="form-label">Correo electrónico</label>
               <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
@@ -217,7 +253,7 @@
     </div>
   </div>
 
-  <main class="container-fluid">
+  <main class="container">
     <!-- probar algo nuevo-->
     <section class="carousel slide" id="carouselMain">
       <div class="carousel-indicators">
@@ -230,13 +266,13 @@
       <div class="carousel-inner">
         <div class="carousel-item">
           <div class="image-text-container">
-            <img src="img/vuelo-nacional-1.jpg" class="d-block" alt="...">
+            <img src="img/Carousel/mendoza.jpg" class="d-block" alt="imagen de mendoza">
             <div class="carousel-caption d-flex flex-column promocion-detalles">
               <h2>¡Descubre la belleza de Mendoza!</h2>
               <p>Incluye visitas a los principales atractivos turísticos de la ciudad, como el Parque General San
                 Martín, el Cerro de la Gloria y la Plaza Independencia.</p>
               <div class="row">
-                <div class="col-6 d-flex titulo-fin">
+                <div class="col-6 d-flex">
                   <h4><del>17,760</del></h4>
                 </div>
                 <div class="col-6 d-flex justify-content-start">
@@ -250,13 +286,13 @@
 
         <div class="carousel-item active">
           <div class="image-text-container">
-            <img src="img/vuelo-nacional-1.jpg" class="d-block" alt="...">
+            <img src="img/Carousel/newyork.jpg" class="d-block" alt="imagen de Nueva York">
             <div class="carousel-caption d-flex flex-column promocion-detalles">
               <h2>¡Descubre la Gran Manzana!</h2>
               <p>Explora la ciudad de Nueva York con este paquete turístico que incluye visitas a los principales
                 atractivos turísticos de la ciudad, como el Empire State Building, Times Square y Central Park.</p>
               <div class="row">
-                <div class="col-6 d-flex titulo-fin">
+                <div class="col-6 d-flex">
                   <h4><del>250,0</del></h4>
                 </div>
                 <div class="col-6 d-flex justify-content-start">
@@ -270,14 +306,14 @@
 
         <div class="carousel-item">
           <div class="image-text-container">
-            <img src="img/vuelo-nacional-1.jpg" class="d-block" alt="...">
+            <img src="img/Carousel/montevideo.jpg" class="d-block" alt="imagen de Montevideo">
             <div class="carousel-caption d-flex flex-column promocion-detalles">
               <h2>¡Descubre la belleza de Montevideo!</h2>
               <p>Explora la ciudad de Montevideo con este paquete turístico que incluye visitas a los principales
                 atractivos turísticos de la ciudad, como la Ciudad Vieja, el Mercado del Puerto y la Rambla de
                 Montevideo.</p>
               <div class="row">
-                <div class="col-6 d-flex titulo-fin">
+                <div class="col-6 d-flex">
                   <h4><del>17,760</del></h4>
                 </div>
                 <div class="col-6 d-flex justify-content-start">
@@ -302,7 +338,10 @@
 
     <!--Panel de control, consultas-->
     <!--Consulta del Estado del Pasaje-->
-    <section class="container consulta-pasaje-presentacion">
+    <section class="consulta-pasaje-presentacion container">
+
+      <h2 class="text-center mb-3">Consulta de Vuelos</h2>
+
       <ul class="row nav nav-pills mb-3" id="HomePresentacion" role="HomePresentacion">
         <li class="col-2 nav-item" role="presentacion">
           <button class="btn active" id="HomePresentacion" data-bs-toggle="pill" data-bs-target="#pills-Vuelos"
@@ -310,19 +349,19 @@
             Vuelos
           </button>
         </li>
-        <li class="col-2 nav-item" role="presentation">
+        <li class="col-3 nav-item" role="presentation">
           <button class="btn" id="HomePresentacion" data-bs-toggle="pill" data-bs-target="#pills-CHECK_IN" type="button"
             role="tab" aria-controls="HomePresentacion" aria-selected="false">
             CHECK IN
           </button>
         </li>
-        <li class="col-2 nav-item" role="presentation">
+        <li class="col-3 nav-item" role="presentation">
           <button class="btn" id="HomePresentacion" data-bs-toggle="pill" data-bs-target="#pills-Estado_de_Vuelo"
             type="button" role="tab" aria-controls="HomePresentacion" aria-selected="false">
             Estado de Vuelo
           </button>
         </li>
-        <li class="col-2 nav-item" role="presentation">
+        <li class="col-4 nav-item" role="presentation">
           <button class="btn" id="HomePresentacion" data-bs-toggle="pill" data-bs-target="#pills-Mi_reserva"
             type="button" role="tab" aria-controls="HomePresentacion" aria-selected="false">
             Mi reserva
@@ -342,7 +381,7 @@
                   Ida
                 </button>
               </li>
-              <li class="col-2 nav-item" role="presentation">
+              <li class="col-4 nav-item" role="presentation">
                 <button class="btn" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-Ida_y_Vuelta"
                   type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
                   Ida y Vuelta
@@ -389,7 +428,9 @@
                     </div>
                   </div>
                   <br>
-                  <button type="submit" class="btn">BUSCAR VUELOS</button>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#warning">
+                    BUSCAR VUELOS
+                  </button>
                 </form>
               </div>
               <div class="tab-pane fade" id="pills-Ida_y_Vuelta" role="tabpanel" aria-labelledby="pills-profile-tab"
@@ -438,7 +479,7 @@
                     </div>
                   </div>
                   <br>
-                  <button type="submit" class="btn">
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#warning">
                     BUSCAR VUELOS
                   </button>
                 </form>
@@ -465,7 +506,7 @@
                 </div>
               </div>
               <div class="col-lg-4">
-                <button type="submit" class="btn btn-lg">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#warning">
                   COMENZAR CHECK IN
                 </button>
               </div>
@@ -483,7 +524,7 @@
 
           <section class="container">
             <ul class="row nav nav-pills mb-3" id="pills-tab" role="tablist">
-              <li class="col-2 nav-item" role="presentation">
+              <li class="col-4 nav-item" role="presentation">
                 <button class="btn active" id="pills-home-tab" data-bs-toggle="pill"
                   data-bs-target="#pills-Numero_de_Vuelo" type="button" role="tab" aria-controls="pills-home"
                   aria-selected="true">
@@ -518,7 +559,9 @@
                       </div>
                     </div>
                     <div class="col-sm mb-3">
-                      <button type="submit" class="btn btn-primary btn-lg btn-block">CONSULTAR</button>
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#warning">
+                        CONSULTAR
+                      </button>
                     </div>
                   </div>
                 </form>
@@ -550,7 +593,9 @@
                       </div>
                     </div>
                     <div class="col-sm mb-3">
-                      <button type="submit" class="btn btn-primary btn-lg btn-block">CONSULTAR</button>
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#warning">
+                        CONSULTAR
+                      </button>
                     </div>
                 </form>
               </div>
@@ -577,17 +622,51 @@
                 </div>
               </div>
               <div class="col-sm mb-3">
-                <button type="submit" class="btn btn-primary btn-lg btn-block">CONSULTAR</button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#warning">
+                  CONSULTAR
+                </button>
               </div>
             </div>
           </form>
         </div>
       </div>
     </section>
+
+    <!--Modal sobre una ventana fuera de servicio para el buscado de vuelo-->
+    <!-- Modal -->
+    <div class="modal fade" id="warning" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p>Lo sentimos, esta función no está disponible temporalmente.<i class="bi bi-exclamation-diamond-fill"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </main>
+
+  <!-- Banners y/o Promociones-->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <div class="banner">
+          <div class="banner-texto">
+            <h2>¡Viaja con estilo!</h2>
+            <p>Descubre nuestros vuelos de lujo y disfruta de una experiencia inigualable.</p>
+            <i class="bi bi-arrow-down"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!--Seccion Destinos-->
   <section class="container destinos-presenteacion">
+
+    <h2 class="text-center mb-3">Clasificación de Vuelos</h2>
+
     <ul class="row nav nav-pills mb-3" id="SeccionDestinos" role="tablist">
       <li class="col-3 nav-item" role="presentation">
         <button class="btn active" id="pills-Destinos_Nacionale-tab" data-bs-toggle="pill"
@@ -596,7 +675,7 @@
           Destinos Nacionales
         </button>
       </li>
-      <li class="col-3 nav-item" role="presentation">
+      <li class="col-4 nav-item" role="presentation">
         <button class="btn" id="pills-Destinos_Internacionales-tab" data-bs-toggle="pill"
           data-bs-target="#pills-Destinos_Internacionales" type="button" role="tab"
           aria-controls="pills-Destinos_Internacionales" aria-selected="true">
@@ -616,43 +695,59 @@
         aria-labelledby="pills-Destinos_Nacionale-tab" tabindex="0">
         <!-- Destinos Nacionales-->
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
             <div class="card w-100">
-              <img src="img/vuelo-nacional-1.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-1" />
+              <img src="img/Destinos-Nacionales/mendoza.jpg" class="card-img-top card-ajustar-img" alt="Imagen de mendoza" />
               <div class="card-body">
-                <h5 class="card-title">Desde Buenos Aires a Mendoza</h5>
-                <p class="card-text">Desde Buenos Aires a Mendoza</p>
-                <a class="btn">Reserva</a>
+                <span>Economy</span>
+                <h5 class="card-title">Desde Buenos Aires</h5>
+                <h4 class="card-text">a Mendoza</h4>
+                <div class="row">
+                  <h6 class="col-6">ARS 14.646</h6>
+                  <a class="col-6 btn" href="verMasVueloMendoza.html">Reserva</a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
             <div class="card w-100">
-              <img src="img/vuelo-nacional-2.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-2" />
+              <img src="img/Destinos-Nacionales/trelew.jpg" class="card-img-top card-ajustar-img" alt="Imagen de trelew" />
               <div class="card-body">
-                <h5 class="card-title">Desde Buenos Aires a Trelew</h5>
-                <p class="card-text">Desde Buenos Aires a Trelew</p>
-                <a class="btn">Reserva</a>
+                <span>Economy</span>
+                <h5 class="card-title">Desde Buenos Aires</h5>
+                <h4 class="card-text">a Trelew</h4>
+                <div class="row">
+                  <h6 class="col-6">ARS 20.800</h6>
+                  <a class="col-6 btn" href="verMasVueloMendoza.html">Reserva</a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
             <div class="card w-100">
-              <img src="img/vuelo-nacional-3.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-3" />
+              <img src="img/Destinos-Nacionales/VillaCarlosPaz.jfif" class="card-img-top card-ajustar-img" alt="Imagen de Villa Carlos Paz" />
               <div class="card-body">
-                <h5 class="card-title">Desde Buenos Aires a Córdoba</h5>
-                <p class="card-text">Desde Buenos Aires a Córdoba</p>
-                <a class="btn">Reserva</a>
+                <span>Economy</span>
+                <h5 class="card-title">Desde Buenos Aires</h5>
+                <h4 class="card-text">a Villa Carlos Paz</h4>
+                <div class="row">
+                  <h6 class="col-6">ARS 12.500</h6>
+                  <a class="col-6 btn" href="verMasVueloMendoza.html">Reserva</a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
             <div class="card w-100">
-              <img src="img/vuelo-nacional-4.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-4" />
+              <img src="img/Destinos-Nacionales/neuqeun.jfif" class="card-img-top card-ajustar-img" alt="Imagen de neuquen" />
               <div class="card-body">
-                <h5 class="card-title">Desde Buenos Aires a Neuquén</h5>
-                <p class="card-text">Desde Buenos Aires a Neuquén</p>
-                <a class="btn">Reserva</a>
+                <span>Economy</span>
+                <h5 class="card-title">Desde Buenos Aires</h5>
+                <h4 class="card-text">a Neuquén</h4>
+                <div class="row">
+                  <h6 class="col-6">ARS 15.300</h6>
+                  <a class="col-6 btn" href="verMasVueloMendoza.html">Reserva</a>
+                </div>
               </div>
             </div>
           </div>
@@ -662,43 +757,59 @@
         aria-labelledby="pills-Destinos_Internacionales-tab" tabindex="0">
         <!--Destinos Internacionales-->
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
             <div class="card w-100">
-              <img src="img/vuelo-nacional-1.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-1" />
+              <img src="img/Destinos-Internacionales/nueva york.jfif" class="card-img-top card-ajustar-img" alt="Imagen de nueva york" />
               <div class="card-body">
-                <h5 class="card-title">Desde Buenos Aires a New York</h5>
-                <p class="card-text">Desde Buenos Aires a New York</p>
-                <a class="btn">Reserva</a>
+                <span>Economy</span>
+                <h5 class="card-title">Desde Buenos Aires</h5>
+                <h4 class="card-text">a New York</h4>
+                <div class="row">
+                  <h6 class="col-6">ARS 350.484</h6>
+                  <a class="col-6 btn" href="verMasVueloMendoza.html">Reserva</a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
             <div class="card w-100">
-              <img src="img/vuelo-nacional-2.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-2" />
+              <img src="img/Destinos-Internacionales/cancun.jfif" class="card-img-top card-ajustar-img" alt="Imagen de cancún" />
               <div class="card-body">
-                <h5 class="card-title">Desde Buenos Aires a Cancún</h5>
-                <p class="card-text">Desde Buenos Aires a Cancún</p>
-                <a class="btn">Reserva</a>
+                <span>Economy</span>
+                <h5 class="card-title">Desde Buenos Aires</h5>
+                <h4 class="card-text">a Cancún</h4>
+                <div class="row">
+                  <h6 class="col-6">ARS 360.907</h6>
+                  <a class="col-6 btn" href="verMasVueloMendoza.html">Reserva</a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
             <div class="card w-100">
-              <img src="img/vuelo-nacional-3.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-3" />
+              <img src="img/Destinos-Internacionales/madrid.jfif" class="card-img-top card-ajustar-img" alt="Imagen de madrid" />
               <div class="card-body">
-                <h5 class="card-title">Desde Buenos Aires a Madrid</h5>
-                <p class="card-text">Desde Buenos Aires a Madrid</p>
-                <a class="btn">Reserva</a>
+                <span>Economy</span>
+                <h5 class="card-title">Desde Buenos Aires</h5>
+                <h4 class="card-text">a Madrid</h4>
+                <div class="row">
+                  <h6 class="col-6">ARS 591.597</h6>
+                  <a class="col-6 btn" href="verMasVueloMendoza.html">Reserva</a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
             <div class="card w-100">
-              <img src="img/vuelo-nacional-4.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-4" />
+              <img src="img/Destinos-Internacionales/roma.jfif" class="card-img-top card-ajustar-img" alt="Imagen de roma" />
               <div class="card-body">
-                <h5 class="card-title">Desde Buenos Aires a Roma</h5>
-                <p class="card-text">Desde Buenos Aires a Roma</p>
-                <a class="btn">Reserva</a>
+                <span>Economy</span>
+                <h5 class="card-title">Desde Buenos Aires</h5>
+                <h4 class="card-text">a Roma</h4>
+                <div class="row">
+                  <h6 class="col-6">ARS 658.437</h6>
+                  <a class="col-6 btn" href="verMasVueloMendoza.html">Reserva</a>
+                </div>
               </div>
             </div>
           </div>
@@ -708,43 +819,59 @@
         aria-labelledby="pills-Destinos_Regionales-tab" tabindex="0">
         <!--Destinos Regionales-->
         <div class="row">
-          <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
             <div class="card w-100">
-              <img src="img/vuelo-nacional-1.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-1" />
+              <img src="img/Destinos-Regionales/montevideo.jfif" class="card-img-top card-ajustar-img" alt="Imagen de montevideo" />
               <div class="card-body">
-                <h5 class="card-title">Desde Buenos Aires a Montevideo</h5>
-                <p class="card-text">Desde Buenos Aires a Montevideo</p>
-                <a class="btn">Reserva</a>
+                <span>Economy</span>
+                <h5 class="card-title">Desde Buenos Aires</h5>
+                <h4 class="card-text">a Montevideo</h4>
+                <div class="row">
+                  <h6 class="col-6">ARS 67.714</h6>
+                  <a class="col-6 btn" href="verMasVueloMendoza.html">Reserva</a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
             <div class="card w-100">
-              <img src="img/vuelo-nacional-2.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-2" />
+              <img src="img/Destinos-Regionales/lima.jfif" class="card-img-top card-ajustar-img" alt="Imagen de lima" />
               <div class="card-body">
-                <h5 class="card-title">Desde Buenos Aires a Lima</h5>
-                <p class="card-text">Desde Buenos Aires a Lima</p>
-                <a class="btn">Reserva</a>
+                <span>Economy</span>
+                <h5 class="card-title">Desde Buenos Aires</h5>
+                <h4 class="card-text">a Lima</h4>
+                <div class="row">
+                  <h6 class="col-6">ARS 224.446</h6>
+                  <a class="col-6 btn" href="verMasVueloMendoza.html">Reserva</a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
             <div class="card w-100">
-              <img src="img/vuelo-nacional-3.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-3" />
+              <img src="img/Destinos-Regionales/bogota.jfif" class="card-img-top card-ajustar-img" alt="Imagen de bogotá" />
               <div class="card-body">
-                <h5 class="card-title">Desde Buenos Aires a Bogotá</h5>
-                <p class="card-text">Desde Buenos Aires a Bogotá</p>
-                <a class="btn">Reserva</a>
+                <span>Economy</span>
+                <h5 class="card-title">Desde Buenos Aires</h5>
+                <h4 class="card-text">a Bogotá</h4>
+                <div class="row">
+                  <h6 class="col-6">ARS 316.939</h6>
+                  <a class="col-6 btn" href="verMasVueloMendoza.html">Reserva</a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
+          <div class="col-lg-3 col-md-6 col-sm-12 mt-3">
             <div class="card w-100">
-              <img src="img/vuelo-nacional-4.jpg" class="card-img-top card-ajustar-img" alt="vuelo-nacional-4" />
+              <img src="img/Destinos-Regionales/brasilia.jfif" class="card-img-top card-ajustar-img" alt="Imagen de brasília" />
               <div class="card-body">
-                <h5 class="card-title">Desde Buenos Aires a Brasilia</h5>
-                <p class="card-text">Desde Buenos Aires a Brasilia</p>
-                <a class="btn">Reserva</a>
+                <span>Economy</span>
+                <h5 class="card-title">Desde Buenos Aires</h5>
+                <h4 class="card-text">a Brasília</h4>
+                <div class="row">
+                  <h6 class="col-6">ARS 168.213</h6>
+                  <a class="col-6 btn" href="verMasVueloMendoza.html">Reserva</a>
+                </div>
               </div>
             </div>
           </div>
@@ -758,12 +885,12 @@
     <div class="row">
       <!--Imagen Ilustrativa-->
       <div class="col-lg-6 col-md-12">
-        <img src="img/servicio_adicionales.jpg" class="d-block w-100" alt="servicio_adicionales" />
+        <img src="img/ServiciosAdicionales/servicio_adicionales.jpg" class="d-block w-100" alt="servicio_adicionales" />
       </div>
       <!--Algunos Servicios adicionales-->
-      <div class="col-lg-6 col-md-12">
+      <div class="col-lg-6 col-md-12 mb-3">
         <div class="row text-center">
-          <h2 class="col-12">Servicios Adicionales</h2>
+          <h2 class="col-12 color-titulo">Servicios Adicionales</h2>
         </div>
         <div class="row item-servicio">
           <div class="col-4 item">
@@ -778,9 +905,9 @@
             <i class="bi bi-building tam-icon-serv"></i>
             <p>Hoteles 5 Estrellas</p>
           </div>
-        </div>
-        <div class="row mt-4">
-          <a class="col-12 btn active">Conocé más servicios</a>
+          <div class="row justify-content-center mt-4">
+            <button type="button" class="col-4 btn" data-bs-toggle="modal" data-bs-target="#ModalFormLogin">Conocé más servicios</button>
+          </div>
         </div>
       </div>
     </div>
@@ -790,9 +917,9 @@
   <section class="container mt-3 mb-4" id="SeccionLuxxPlus">
     <div class="row">
       <!--luxx-plus-->
-      <div class="col-lg-6 col-md-12">
+      <div class="col-lg-6 col-md-12 mb-3">
         <div class="row text-center">
-          <h2 class="col-12">Disfrutá de Aerolíneas Luxx Plus</h2>
+          <h2 class="col-12 color-titulo">Disfrutá de Aerolíneas Luxx Plus</h2>
         </div>
         <div class="row item-Luxx">
           <div class="col-4 item">
@@ -807,13 +934,13 @@
             <i class="bi bi-star-fill tam-icon-luxx"></i>
             <p>Socios Elite</p>
           </div>
-        </div>
-        <div class="row mt-4">
-          <button class="col-12 btn active">¡ Sumá Millas !</button>
+          <div class="row justify-content-center mt-4">
+            <button type="button" class="col-4 btn" data-bs-toggle="modal" data-bs-target="#ModalFormLogin">¡ Sumá Millas !</button>
+            </div>
         </div>
       </div>
       <div class="col-lg-6 col-md-12">
-        <img src="img/aerolineas-luxx-plus.jpg" class="d-block w-100" alt="aerolineas-luxx-plus" />
+        <img src="img/LuxPlus/aerolineas-luxx-plus.jpg" class="d-block w-100" alt="aerolineas-luxx-plus" />
       </div>
     </div>
   </section>
@@ -901,7 +1028,8 @@
       <div class="col-lg-6 col-md-12">
         <p><i class="tam-icon-suscrib bi bi-envelope-plus-fill"></i> Suscribite para recibir nuestras promociones</p>
         <p>
-          <button class="btn active"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <button class="btn active" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+            aria-expanded="false" aria-controls="collapseExample">
             Suscribirme
           </button>
         </p>
@@ -914,7 +1042,8 @@
               </div>
               <div class="col-12 mb-3">
                 <label for="correoSuscrib" class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control" id="correoSuscrib" placeholder="Ingresa tu correo electrónico" required>
+                <input type="email" class="form-control" id="correoSuscrib" placeholder="Ingresa tu correo electrónico"
+                  required>
               </div>
               <button type="submit" class="btn btn-primary">Suscribirse</button>
             </form>
@@ -1003,4 +1132,5 @@
     document.getElementById("ModalFormLogin").modal("hide");
   });
 </script>
+
 </html>

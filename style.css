@@ -16,7 +16,7 @@ body{
 /*PRESENTACION*/
 .presentacion{
     text-shadow: 2px 2px 4px #fff; /*Sombra al texto*/
-    background-image: url(img/fondo-2.jpg);
+    background-image: url(img/fondo-logo/fondo.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -43,7 +43,13 @@ body{
 
 .carousel-item img {
     width: 100%;
-    height: auto;
+    height: 100%;
+}
+
+.carousel-item-detalle_producto img{
+    width: 800px;
+    height: 400px;
+    object-fit: cover;
 }
 
 .carousel-caption p {
@@ -51,7 +57,6 @@ body{
 }  
 
 .image-text-container {
-    /* ... */
     overflow: hidden;
 }
   
@@ -95,12 +100,18 @@ body{
     color: #FF8C32;
     border-radius: 5px;
 }
+
+.hidden{
+    display: none;
+}
+
 /*HOME*/
 /*PRESENTACION-PROMOCIONES*/
 .home-presentacion img {
     width: 100%;
     height: auto;
 } 
+
 
 /*CONSULTA DE PASAJES*/
 .consulta-pasaje-presentacion{
@@ -119,6 +130,35 @@ body{
 .consulta-pasaje-presentacion .btn:hover{
     background-color: #111F4D;
     color: #DC5F00;
+}
+
+/*BANNERS Y PROMOCIONES*/
+
+.banner {
+    background-image: url('img/Banners&Promociones/promo_3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-position-y: -300px;
+}
+ 
+.banner-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #fff; 
+}
+ 
+.banner-texto h2, .banner-texto p {
+    text-align: center;
+    color: #DC5F00;
+    background-color: #111F4D;
+}
+
+.banner-texto i {
+    font-size: 2rem;
+    color: #ebd408;
 }
 
 /*DESTINOS - CATEGORIAS*/
@@ -174,11 +214,23 @@ En el código CSS que se proporcionó en la respuesta anterior, object-fit: cove
 
 .item-servicio .item p {
   margin-bottom: 8px;
+  color: #111F4D;
 }
 
-/*TAMAÑO DE LOS ICONOS*/
+.color-titulo{
+    color: #111F4D;
+    background-color: #DC5F00;
+}
+
+/*ICONOS*/
 .tam-icon-serv{
     font-size: 30px;
+    color: #e4cd05;
+}
+
+.item-servicio .btn{
+    color: #EEEEEE;
+    background-color: #111F4D;
 }
 
 /*SERVICIOS LUXX PLUS*/
@@ -203,11 +255,18 @@ En el código CSS que se proporcionó en la respuesta anterior, object-fit: cove
 
 .item-Luxx .item p {
   margin-bottom: 8px;
+  color: #111F4D;
 }
 
-/*TAMAÑO DE LOS ICONOS*/
+/*ICONOS*/
 .tam-icon-luxx{
     font-size: 30px;
+    color: #e4cd05;
+}
+
+.item-Luxx .btn{
+    color: #EEEEEE;
+    background-color: #111F4D;
 }
 
 /*SECCION AYUDA*/
@@ -239,4 +298,8 @@ En el código CSS que se proporcionó en la respuesta anterior, object-fit: cove
     font-size: 10px;
 }
 
-
+/*SECCIN DE PREGUNTAS FRECUENTES*/
+.preguntas-frecuentes{
+    background-color: #F2F4F7;
+    color: #111F4D;
+}
