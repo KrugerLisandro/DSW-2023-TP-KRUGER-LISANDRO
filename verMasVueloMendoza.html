@@ -11,732 +11,771 @@
 		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
 		crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="css/CSS-style.css"/>
 	<title>VerMasVueloMendoza</title>
 </head>
+
 <body>
 	<!--Encabezado del sitio, Nombre de la empresa-->
 	<header class="container-fluid presentacion">
 		<div class="row">
-		  <h1 class="col-6">Aerolíneas-Luxx</h1>
-		  <p class="col-6">El cielo es el Límite...</p>
+			<h1 class="col-lg-6 col-md-6 col-7">Aerolíneas Luxx</h1>
+			<p class="col-lg-6 col-md-6 col-5">El cielo es el Límite...</p>
 		</div>
-	  </header>
-	
-	  <!-- Navegación del sitio, menú con las distintas secciones de la pagina-->
-	  <nav class="navbar navbar-expand-lg sticky-top navegacion-menu">
-		<div class="container-fluid">
-		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		  </button>
-		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-			  <li class="nav-item">
-				<a class="nav-link" aria-current="page" href="#HomePresentacion">Home</a>
-			  </li>
-			  <li class="nav-item">
-				<div class="dropdown">
-				  <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-					Destino
-				  </a>
-				  <ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="#SeccionDestinos">Nacionales</a></li>
-					<li><a class="dropdown-item" href="#SeccionDestinos">Internacionales</a></li>
-					<li><a class="dropdown-item" href="#SeccionDestinos">Regionales</a></li>
-				  </ul>
-				</div>
-			  </li>
-			  <li class="nav-item">
-				<div class="dropdown">
-				  <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-					Servicios Adicionales
-				  </a>
-				  <ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="#SeccionServiciosAdicionales">Compra Equipaje</a></li>
-					<li><a class="dropdown-item" href="#SeccionServiciosAdicionales">Asistencia al viajero</a></li>
-					<li><a class="dropdown-item" href="#SeccionServiciosAdicionales">Hoteles 5 Estrellas</a></li>
-				  </ul>
-				</div>
-			  </li>
-			  <li class="nav-item">
-				<div class="dropdown">
-				  <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-					Disfrutá de Aerolíneas Luxx Plus
-				  </a>
-				  <ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="#SeccionLuxxPlus">Canjeá Millas</a></li>
-					<li><a class="dropdown-item" href="#SeccionLuxxPlus">Sumá Millas</a></li>
-					<li><a class="dropdown-item" href="#SeccionLuxxPlus">Socios Elite</a></li>
-				  </ul>
-				</div>
-			  </li>
-			  <li class="nav-iteam">
-				<div class="dropdown">
-				  <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-					Ayuda
-				  </a>
-				  <ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="#SeccionAyuda">Políticas de equipaje</a></li>
-					<li><a class="dropdown-item" href="#SeccionAyuda">Información para tu viaje</a></li>
-					<li><a class="dropdown-item" href="#SeccionAyuda">Preguntas frecuentes</a></li>
-					<li><a class="dropdown-item" href="#SeccionAyuda">Servicios e información importante</a></li>
-				  </ul>
-				</div>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" aria-current="page" href="#SeccionContactos">Contactos</a>
-			  </li>
-			</ul>
-			<form class="d-flex">
-			  <button type="button" class="btn button-nav me-2" data-bs-toggle="modal" data-bs-target="#ModalFormRegistro">
-				Registro
-			  </button>
-			  <!-- Botón para abrir el modal -->
-			  <button type="button" class="btn button-nav me-2" data-bs-toggle="modal" data-bs-target="#ModalFormLogin">
-				Iniciar sesión
-			  </button>
-			</form>
-		  </div>
-		</div>
-	  </nav>
-	
-	  <!--Modal, Formulario de registro-->
-	  <div class="modal fade" id="ModalFormRegistro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-		aria-labelledby="staticBackdropLabel" aria-hidden="true">
-		<div class="modal-dialog modal-lg">
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <h1 class="modal-title fs-5" id="staticBackdropLabel">Registro</h1>
-			  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-			  <form class="was-validated" id="form-registro">
-				<div class="row mb-3">
-				  <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
-				  <div class="col-sm-10">
-					<input type="text" class="form-control" id="nombre" data-bs-toggle="tooltip" data-bs-placement="top"
-					  data-bs-title="Este campo es obligatorio" required></input>
-				  </div>
-				</div>
-				<div class="row mb-3">
-				  <label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
-				  <div class="col-sm-10">
-					<input type="text" class="form-control" id="apellido" data-bs-toggle="tooltip" data-bs-placement="top"
-					  data-bs-title="Este campo es obligatorio" required></input>
-				  </div>
-				</div>
-				<div class="row mb-3">
-				  <label for="dni" class="col-sm-2 col-form-label">DNI</label>
-				  <div class="col-sm-10">
-					<input type="number" class="form-control" id="dni" data-bs-toggle="tooltip" data-bs-placement="top"
-					  data-bs-title="Este campo es obligatorio" required></input>
-				  </div>
-				</div>
-				<div class="row mb-3">
-				  <label for="email" class="col-sm-2 col-form-label">E-mail</label>
-				  <div class="col-sm-10">
-					<input type="email" class="form-control" id="email" data-bs-toggle="tooltip" data-bs-placement="top"
-					  data-bs-title="Este campo es obligatorio" required></input>
-				  </div>
-				</div>
-				<div class="row mb-3">
-				  <label for="fechaNacimiento" class="col-sm-2 col-form-label">Fecha de Nacimiento</label>
-				  <div class="col-sm-10">
-					<input type="date" class="form-control" id="fechaNacimiento" data-bs-toggle="tooltip"
-					  data-bs-placement="top" data-bs-title="Este campo es obligatorio" required></input>
-					<div class="invalid-feedback" id="fechaNacimientoFeedback"></div>
-				  </div>
-				</div>
-				<div class="row mb-3">
-				  <label for="pais" class="col-sm-2 col-form-label">País</label>
-				  <div class="col-sm-10">
-					<select class="form-select" id="pais" name="pais" data-bs-toggle="tooltip" data-bs-placement="top"
-					  data-bs-title="Este campo es obligatorio" required>
-					  <option selected disabled value="">Seleccionar país</option>
-					  <option value="Argentina">Argentina</option>
-					  <option value="Brasil">Brasil</option>
-					  <option value="Chile">Chile</option>
-					  <option value="Colombia">Colombia</option>
-					  <option value="México">México</option>
-					</select>
-				  </div>
-				</div>
-				<div class="row mb-3">
-				  <label for="provincia" class="col-sm-2 col-form-label">Provincia</label>
-				  <div class="col-sm-10">
-					<select class="form-select" id="provincia" name="provincia" data-bs-toggle="tooltip"
-					  data-bs-placement="top" data-bs-title="Este campo es obligatorio" required>
-					  <option selected disabled value="">Seleccionar provincia</option>
-					  <option value="Buenos Aires">Buenos Aires</option>
-					  <option value="Córdoba">Córdoba</option>
-					  <option value="Santa Fe">Santa Fe</option>
-					  <option value="Mendoza">Mendoza</option>
-					  <option value="Tucumán">Tucumán</option>
-					</select>
-				  </div>
-				</div>
-				<div class="row mb-3">
-				  <div class="col-sm-10 offset-sm-2">
-					<div class="form-check">
-					  <input type="checkbox" class="form-check-input" id="terminos-y-condiciones"
-						name="terminos-y-condiciones" />
-					  <label class="form-check-label" for="terminos-y-condiciones">Acepto
-						los términos y condiciones</label>
-					  <div class="invalid-feedback" id="terminosFeedback"></div>
-					</div>
-				  </div>
-				</div>
-				<div class="row mb-3">
-				  <div class="col-sm-10 offset-sm-2">
-					<button type="submit" class="btn btn-primary" id="registrarse" name="registrarse">
-					  Registrarse
-					</button>
-				  </div>
-				</div>
-			  </form>
-			</div>
-			<div class="modal-footer">
-			  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-				Cancelar
-			  </button>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	
-	  <!--Nuevo codigo inicio-->
-	  <!-- Modal -->
-	  <div class="modal fade" id="ModalFormLogin" tabindex="-1" aria-labelledby="ModalFormLoginLabel" aria-hidden="true">
-		<div class="modal-dialog">
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <h5 class="modal-title" id="ModalFormLoginLabel">Iniciar sesión</h5>
-			  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-			  <!-- Formulario de inicio de sesión -->
-			  <form class="was-validated" id="form-login">
-				<div class="mb-3">
-				  <label for="emailLogin" class="col-sm-2 col-form-label">Email</label>
-				  <div class="col-sm-10">
-					<input type="email" class="form-control" id="emailLogin" data-bs-toggle="tooltip"
-					  data-bs-placement="top" data-bs-title="Este campo es obligatorio" required></input>
-				  </div>
-				</div>
-				<div class="mb-3">
-				  <label for="contraseniaLogin" class="col-sm-2 col-form-label">Contraseña</label>
-				  <div class="col-sm-10">
-					<input type="password" class="form-control" id="contraseniaLogin" data-bs-toggle="tooltip"
-					  data-bs-placement="top" data-bs-title="Este campo es obligatorio" required></input>
-				  </div>
-				</div>
-				<div class="mb-3 form-check">
-				  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-				  <label class="form-check-label" for="exampleCheck1">Recordar contraseña</label>
-				</div>
-				<button type="button" class="btn btn-primary" id="login-button">Iniciar sesión</button>
-				<button type="button" class="btn btn-link" id="recuperar-password-button">¿Olvidaste tu contraseña?</button>
-			  </form>
-			  <!-- Formulario de recuperar contraseña -->
-			  <form id="form-recuperar-password" class="hidden">
-				<div class="mb-3">
-				  <label for="exampleInputEmail2" class="form-label">Correo electrónico</label>
-				  <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
-				  <div id="emailHelp" class="form-text">Introduce tu correo electrónico para recuperar tu contraseña.</div>
-				</div>
-				<button type="button" class="btn btn-primary" id="password-button">Enviar contraseña</button>
-			  </form>
-			</div>
-		  </div>
-		</div>
-	  </div>
+	</header>
 
-	<main class="container">
-		<section class="row consulta-pasaje-presentacion">
-			<h1 class="text-center mb-3">Detalle de Producto</h1>
-			<div class="row mb-3">
-				<div class="col-lg-8 col-md-12">
-					<section class="carousel slide" id="carouselMain">
-						<div class="carousel-indicators">
-							<button type="button" data-bs-target="#carouselMain" data-bs-slide-to="0" aria-label="Slide 1"></button>
-							<button type="button" data-bs-target="#carouselMain" data-bs-slide-to="1" class="active" aria-current="true"
-								aria-label="Slide 2"></button>
-							<button type="button" data-bs-target="#carouselMain" data-bs-slide-to="2" aria-label="Slide 3"></button>
-						</div>
-				
-						<div class="carousel-inner">
-							<div class="carousel-item carousel-item-detalle_producto">
-								<img src="img/DetallesProducto/mendoza-1.jfif" class="d-block" alt="imagen de mendoza">
-							</div>
-				
-							<div class="carousel-item carousel-item-detalle_producto active">
-								<img src="img/DetallesProducto/mendoza-2.jfif" class="d-block" alt="imagen de Nueva York">
-							</div>
-				
-							<div class="carousel-item carousel-item-detalle_producto">
-								<img src="img/DetallesProducto/mendoza-3.jfif" class="d-block" alt="imagen de Montevideo">
-							</div>
-						</div>
-				
-						<button class="carousel-control-prev" type="button" data-bs-target="#carouselMain" data-bs-slide="prev">
-							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-							<span class="visually-hidden">Previous</span>
-						</button>
-						<button class="carousel-control-next" type="button" data-bs-target="#carouselMain" data-bs-slide="next">
-							<span class="carousel-control-next-icon" aria-hidden="true"></span>
-							<span class="visually-hidden">Next</span>
-						</button>
-					</section>
-				</div>
-				<div class="col-lg-4 col-md-12">
-					<h2 class="row">¡Vuela a Mendoza con descuentos increíbles en vuelos de primera categoría!</h2>
-					<p class="row">¿Quieres visitar la hermosa ciudad de Mendoza? ¡Aprovecha nuestras promociones de
-						vuelos de primera categoría con descuentos increíbles! Descubre los viñedos, la cultura y la
-						belleza natural de Mendoza con la comodidad y el lujo de nuestros vuelos de primera categoría.
-						¡No te pierdas esta oportunidad única de viajar a Mendoza con estilo!</p>
-				</div>
-			</div>
-			</div>
-			<div class="row">
-				<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-					<li class="col-1 offset-1" role="presentation">
-						<button class="btn active" id="pills-Ida-tab" data-bs-toggle="pill" data-bs-target="#pills-Ida"
-							type="button" role="tab" aria-controls="pills-Ida" aria-selected="true">
-							Ida
-						</button>
+	<!-- Navegación del sitio, menú con las distintas secciones de la pagina-->
+	<nav class="navbar navbar-expand-lg sticky-top navegacion-menu">
+		<div class="container-fluid">
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="btn-nro-uno nav-link" aria-current="page" href="#HomePresentacion">Home</a>
 					</li>
-					<li class="col-2 nav-item" role="presentation">
-						<button class="btn" id="pills-Ida_y_Vuelta-tab" data-bs-toggle="pill"
-							data-bs-target="#pills-Ida_y_Vuelta" type="button" role="tab" aria-controls="pills-Ida_y_Vuelta"
-							aria-selected="false">
-							Ida y Vuelta
-						</button>
+					<li class="nav-item">
+						<div class="dropdown">
+							<a class="btn btn-nro-uno dropdown-toggle" type="button" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								Destino
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="btn btn-nro-uno dropdown-item" href="#SeccionDestinos">Nacionales</a></li>
+								<li><a class="btn btn-nro-uno dropdown-item" href="#SeccionDestinos">Internacionales</a>
+								</li>
+								<li><a class="btn btn-nro-uno dropdown-item" href="#SeccionDestinos">Regionales</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-item">
+						<div class="dropdown">
+							<a class="btn btn-nro-uno dropdown-toggle" type="button" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								Servicios Adicionales
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="btn btn-nro-uno dropdown-item" href="#SeccionServiciosAdicionales">Compra
+										Equipaje</a></li>
+								<li><a class="btn btn-nro-uno dropdown-item"
+										href="#SeccionServiciosAdicionales">Asistencia al viajero</a></li>
+								<li><a class="btn btn-nro-uno dropdown-item" href="#SeccionServiciosAdicionales">Hoteles
+										5 Estrellas</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-item">
+						<div class="dropdown">
+							<a class="btn btn-nro-uno dropdown-toggle" type="button" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								Disfrutá de Aerolíneas Luxx Plus
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="btn btn-nro-uno dropdown-item" href="#SeccionLuxxPlus">Canjeá Millas</a>
+								</li>
+								<li><a class="btn btn-nro-uno dropdown-item" href="#SeccionLuxxPlus">Sumá Millas</a>
+								</li>
+								<li><a class="btn btn-nro-uno dropdown-item" href="#SeccionLuxxPlus">Socios Elite</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-iteam">
+						<div class="dropdown">
+							<a class="btn btn-nro-uno dropdown-toggle" type="button" data-bs-toggle="dropdown"
+								aria-expanded="false">
+								Ayuda
+							</a>
+							<ul class="dropdown-menu">
+								<li><a class="btn btn-nro-uno dropdown-item" href="#SeccionAyuda">Políticas de
+										equipaje</a></li>
+								<li><a class="btn btn-nro-uno dropdown-item" href="#SeccionAyuda">Información para tu
+										viaje</a></li>
+								<li><a class="btn btn-nro-uno dropdown-item" href="#SeccionAyuda">Preguntas
+										frecuentes</a></li>
+								<li><a class="btn btn-nro-uno dropdown-item" href="#SeccionAyuda">Servicios e
+										información importante</a></li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="btn-nro-uno nav-link" aria-current="page" href="#SeccionContactos">Contactos</a>
 					</li>
 				</ul>
-				<div class="tab-content" id="pills-tabContent">
-					<div class="tab-pane fade show active" id="pills-Ida" role="tabpanel" aria-labelledby="pills-Ida-tab"
-						tabindex="0">
-						<!--Ida-->
-						<form class="container">
-							<div class="row d-flex">
-								<div class="col-lg-6">
-									<div class="form-floating mb-3">
-										<input type="date" class="form-control form-control-lg" id="vueloInputFecha"
-											placeholder="Fecha">
-										<label for="vueloInputFecha" class="form-label">Fecha</label>
-									</div>
-								</div>
-								<div class="col-lg-6">
-									<div class="form-floating mb-3">
-										<select class="form-select form-control-lg" id="vueloInputClase" aria-label="Clase">
-											<option selected>Seleccione el tipo de Clase</option>
-											<option value="economy">Economy</option>
-											<option value="premium-economy">Premium Economy</option>
-											<option value="business">Business</option>
-										</select>
-										<label for="vueloInputClase" class="form-label">Clase</label>
-									</div>
-								</div>
-								<div class="col-lg-6">
-									<div class="form-floating mb-3">
-										<select class="form-select form-control-lg" id="vueloInputTarjeta" aria-label="Tarjeta">
-											<option selected>Seleccione la tarjeta de crédito</option>
-											<option value="american-express">American Express</option>
-											<option value="visa">Visa</option>
-											<option value="mastercard">Mastercard</option>
-											<option value="cabal">Cabal</option>
-											<option value="patagonia-365">Patagonia 365</option>
-										</select>
-										<label for="vueloInputTarjeta" class="form-label">Tarjeta de Crédito</label>
-									</div>
-								</div>
-								<div class="col-lg-6">
-									<div class="form-floating mb-3">
-										<select class="form-select form-control-lg" id="vueloInputPago" aria-label="Pago">
-											<option selected>Seleccione la forma de Pago</option>
-											<option value="3-cuotas">3 Cuotas sin interés</option>
-											<option value="6-cuotas">6 Cuotas sin interés</option>
-											<option value="9-cuotas">9 Cuotas sin interés</option>
-											<option value="12-cuotas">12 Cuotas sin interés</option>
-										</select>
-										<label for="vueloInputPago" class="form-label">Forma de Pago</label>
-									</div>
-								</div>
-							</div>
-							<br>
-							<div class="row">
-								<h2 class="col-12 text-end">ARS 14.646</h2>
-							</div>
-							<div class="row">
-								<a class="col-lg-2 btn btn-danger" href="index.html">Cancelar Comprar</a>
-								<button type="button" class="col-lg-2 offset-8 btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalFormLogin">Confirmar Comprar</button>
-							</div>
-						</form>
-					</div>
-					<div class="tab-pane fade" id="pills-Ida_y_Vuelta" role="tabpanel"
-						aria-labelledby="pills-Ida_y_Vuelta-tab" tabindex="0">
-						<!--Ida y Vuelta-->
-						<form class="container">
-							<div class="row d-flex">
-								<div class="col-lg-4">
-									<div class="form-floating mb-3">
-										<input type="date" class="form-control form-control-lg" id="vueloInputPartida"
-											placeholder="Partida">
-										<label for="vueloInputPartida" class="form-label">Partida</label>
-									</div>
-								</div>
-								<div class="col-lg-4">
-									<div class="form-floating mb-3">
-										<input type="date" class="form-control form-control-lg" id="vueloInputRegreso"
-											placeholder="Regreso">
-										<label for="vueloInputRegreso" class="form-label">Regreso</label>
-									</div>
-								</div>
-								<div class="col-lg-4">
-									<div class="form-floating mb-3">
-										<select class="form-select form-control-lg" id="vueloInputClase" aria-label="Clase">
-											<option selected>Seleccione el tipo de Clase</option>
-											<option value="economy">Economy</option>
-											<option value="premium-economy">Premium Economy</option>
-											<option value="business">Business</option>
-										</select>
-										<label for="vueloInputClase" class="form-label">Clase</label>
-									</div>
-								</div>
-								<div class="col-lg-4">
-									<div class="form-floating mb-3">
-										<select class="form-select form-control-lg" id="vueloInputTarjeta" aria-label="Tarjeta">
-											<option selected>Seleccione la tarjeta de crédito</option>
-											<option value="american-express">American Express</option>
-											<option value="visa">Visa</option>
-											<option value="mastercard">Mastercard</option>
-											<option value="cabal">Cabal</option>
-											<option value="patagonia-365">Patagonia 365</option>
-										</select>
-										<label for="vueloInputTarjeta" class="form-label">Tarjeta de Crédito</label>
-									</div>
-								</div>
-								<div class="col-lg-4">
-									<div class="form-floating mb-3">
-										<select class="form-select form-control-lg" id="vueloInputPago" aria-label="Pago">
-											<option selected>Seleccione la forma de Pago</option>
-											<option value="3-cuotas">3 Cuotas sin interés</option>
-											<option value="6-cuotas">6 Cuotas sin interés</option>
-											<option value="9-cuotas">9 Cuotas sin interés</option>
-											<option value="12-cuotas">12 Cuotas sin interés</option>
-										</select>
-										<label for="vueloInputPago" class="form-label">Forma de Pago</label>
-									</div>
-								</div>
-							</div>
-							<br>
-							<div class="row">
-								<h2 class="col-12 text-end">ARS 14.646</h2>
-							</div>
-							<div class="row">
-								<a class="col-lg-2 btn btn-danger" href="index.html">Cancelar Comprar</a>
-								<button type="button" class="col-lg-2 offset-8 btn btn-success" data-bs-toggle="modal" data-bs-target="#ModalFormLogin">Confirmar Comprar</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-		<section class="row mb-3">
-			<h2>Preguntas Frecuentes</h2>
-			<div id="accordion">
-				<div class="card preguntas-frecuentes">
-					<div class="card-header" id="heading-1">
-						<h2 class="mb-0">
-							<button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapseOne">
-								¿Cuáles son los requisitos de documentación para viajar en avión?
-							</button>
-						</h2>
-					</div>
-					<div id="collapse-1" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion">
-						<div class="card-body">
-							<p>Para viajar en avión, necesitarás llevar contigo un documento de identidad válido, como un pasaporte o una cédula de identidad. Además, si estás viajando internacionalmente, es posible que necesites obtener una visa o un permiso de viaje según el país de destino.</p>
-						</div>
-					</div>
-				</div>
-				<div class="card preguntas-frecuentes">
-					<div class="card-header" id="heading-2">
-						<h2 class="mb-0">
-							<button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapseTwo">
-								¿Cuánto equipaje puedo llevar en un vuelo?
-							</button>
-						</h2>
-					</div>
-					<div id="collapse-2" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
-						<div class="card-body">
-							<p>Las aerolíneas tienen diferentes políticas de equipaje, pero en general, se permiten una o dos piezas de equipaje facturado, dependiendo de la clase de vuelo y la aerolínea. Además, también se permite llevar un equipaje de mano, que debe cumplir con ciertas dimensiones y restricciones de peso.</p>
-						</div>
-					</div>
-				</div>
-				<div class="card preguntas-frecuentes">
-					<div class="card-header" id="heading-3">
-						<h2 class="mb-0">
-							<button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapseTwo">
-								¿Cuáles son las medidas de seguridad en los aeropuertos?
-							</button>
-						</h2>
-					</div>
-					<div id="collapse-3" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
-						<div class="card-body">
-							<p>Los aeropuertos tienen medidas de seguridad para garantizar la seguridad de los pasajeros y prevenir cualquier amenaza. Estas medidas pueden incluir controles de seguridad, escaneo de equipaje, revisión de documentos de identidad y detección de metales. Es importante seguir las instrucciones del personal de seguridad y cumplir con todas las regulaciones.</p>
-						</div>
-					</div>
-				</div>
-				<div class="card preguntas-frecuentes">
-					<div class="card-header" id="heading-4">
-						<h2 class="mb-0">
-							<button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapseTwo">
-								¿Cuánto tiempo antes debo llegar al aeropuerto antes de mi vuelo?
-							</button>
-						</h2>
-					</div>
-					<div id="collapse-4" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
-						<div class="card-body">
-							<p>Se recomienda llegar al aeropuerto al menos 2 horas antes de la salida programada de tu vuelo. Esto te dará suficiente tiempo para realizar el check-in, pasar por los controles de seguridad y abordar el avión sin problemas. Sin embargo, en casos de vuelos internacionales, es posible que sea necesario llegar con más anticipación.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-		
-		<section class="row destinos-presenteacion">
-			<h3 class="text-center">Productos Destacados</h3>
-			<div class="row">
-				<div class="col-md-4">
-					<div class="card w-100">
-						<img src="img/Destinos-Nacionales/trelew.jpg" class="card-img-top card-ajustar-img" alt="Imagen de trelew" />
-						<div class="card-body">
-						  <span>Economy</span>
-						  <h5 class="card-title">Desde Buenos Aires</h5>
-						  <h4 class="card-text">a Trelew</h4>
-						  <div class="row">
-							<h6 class="col-6">ARS 20.800</h6>
-							<a class="col-6 btn" href="verMasVueloMendoza.html">Reserva</a>
-						  </div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card w-100">
-						<img src="img/Destinos-Nacionales/VillaCarlosPaz.jfif" class="card-img-top card-ajustar-img" alt="Imagen de Villa Carlos Paz" />
-						<div class="card-body">
-						  <span>Economy</span>
-						  <h5 class="card-title">Desde Buenos Aires</h5>
-						  <h4 class="card-text">a Villa Carlos Paz</h4>
-						  <div class="row">
-							<h6 class="col-6">ARS 12.300</h6>
-							<a class="col-6 btn" href="verMasVueloMendoza.html">Reserva</a>
-						  </div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="card w-100">
-						<img src="img/Destinos-Nacionales/neuqeun.jfif" class="card-img-top card-ajustar-img" alt="Imagen de neuquen" />
-						<div class="card-body">
-						  <span>Economy</span>
-						  <h5 class="card-title">Desde Buenos Aires</h5>
-						  <h4 class="card-text">a Neuquén</h4>
-						  <div class="row">
-							<h6 class="col-6">ARS 15.300</h6>
-							<a class="col-6 btn" href="verMasVueloMendoza.html">Reserva</a>
-						  </div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</main>
-	 <!--Seccion Ayuda-->
-	 <section class="container-fluid mt-4 mb-3 ayuda-presentacion" id="SeccionAyuda">
-		<div class="row">
-		  <h2 class="col-12 text-center">¿Necesitás ayuda con tu viaje?</h2>
-		  <p class="col-12 text-center">Encontrá toda la información que necesitás en nuestro centro de ayuda.</p>
-		</div>
-		<div class="container">
-		  <div class="row">
-			<ul class="col-lg-3 col-md-6 col-sm-12">
-			  <h3><a>Políticas de equipaje</a></h3>
-			  <li>Franquicias de equipajes</li>
-			  <li>Exceso de equipaje</li>
-			  <li>Equipaje adicional</li>
-			  <li>Artículos restringidos</li>
-			</ul>
-	
-			<ul class="col-lg-3 col-md-6 col-sm-12">
-			  <h3><a>Información para tu viaje</a></h3>
-			  <li>Asistencias</li>
-			  <li>Niños y bebés</li>
-			  <li>Mascotas</li>
-			</ul>
-	
-			<ul class="col-lg-3 col-md-6 col-sm-12">
-			  <h3><a>Preguntas frecuentes</a></h3>
-			  <li>Aerolíneas Look Plus</li>
-			  <li>Check In</li>
-			  <li>Reservas y Servicios</li>
-			</ul>
-	
-			<ul class="col-lg-3 col-md-6 col-sm-12">
-			  <h3><a>Servicios e información importante</a></h3>
-			  <li>Estado de vuelo</li>
-			  <li>Cambios on line</li>
-			  <li>Procedimiento de devolución de tasa aeroportuaria</li>
-			  <li>Información importante para pasajeros ingresando a México</li>
-			  <li>Información judicial-Pasajeros no show</li>
-			  <li>Impuesto PAIS</li>
-			</ul>
-		  </div>
-		</div>
-	  </section>
-	
-	  <!-- Seccion Enlaces sociales y contactos-->
-	  <footer class="container enlaces_sociales-contactos" id="SeccionContactos">
-		<div class="row">
-		  <!--Institucional-->
-		  <div class="col-lg-6 col-md-12 remover">
-			<h3>Institucional</h3>
-			<div class="row no-item">
-			  <ul class="col-6">
-				<li>Compañía</li>
-				<li>Contenidos Institucionales</li>
-				<li>Proveedor</li>
-			  </ul>
-			  <ul class="col-6">
-				<li>SkyTeam</li>
-				<li>Aerolíneas</li>
-				<li>Somos AR</li>
-			  </ul>
-			</div>
-		  </div>
-		  <!--Comunicate con nosotros-->
-		  <div class="col-lg-6 col-md-12">
-			<div class="row">
-			  <h3 class="col-12"><i class="bi bi-person-workspace"></i> Comunicate con nosotros</h3>
-			</div>
-			<div class="row">
-			  <div class="col-6">
-				<h4><i class="bi bi-telephone-plus-fill"></i> Contact Center:</h4>
-				<p>0810-222-86527 Lun a Vie de 8 a 20hs. Sáb, Dom y feriados de 8 a 14 hs.</p>
-			  </div>
-			  <div class="col-6">
-				<h4><i class="bi bi-whatsapp"></i> WhatsApp</h4>
-				<p> 0810-222-86527 Lun a Vie de 8 a 20hs. an Sáb, Dom y feriados de 8 a 14 hs.</p>
-			  </div>
-			</div>
-		  </div>
-	
-		  <!--Suscribirme Suscribirme-->
-		  <div class="col-lg-6 col-md-12">
-			<p><i class="tam-icon-suscrib bi bi-envelope-plus-fill"></i> Suscribite para recibir nuestras promociones</p>
-			<p>
-			  <button class="btn active" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
-				aria-expanded="false" aria-controls="collapseExample">
-				Suscribirme
-			  </button>
-			</p>
-			<div class="container collapse" id="collapseExample">
-			  <div class="row card card-body">
-				<form>
-				  <div class="col-12 mb-3">
-					<label for="nombreSuscrib" class="form-label">Nombre</label>
-					<input type="text" class="form-control" id="nombreSuscrib" placeholder="Ingresa tu nombre" required>
-				  </div>
-				  <div class="col-12 mb-3">
-					<label for="correoSuscrib" class="form-label">Correo electrónico</label>
-					<input type="email" class="form-control" id="correoSuscrib" placeholder="Ingresa tu correo electrónico"
-					  required>
-				  </div>
-				  <button type="submit" class="btn btn-primary">Suscribirse</button>
+				<form class="d-flex">
+					<button type="button" class="btn btn-nro-dos me-2" data-bs-toggle="modal"
+						data-bs-target="#ModalFormRegistro">
+						Registro
+					</button>
+					<!-- Botón para abrir el modal -->
+					<button type="button" class="btn btn-nro-dos me-2" data-bs-toggle="modal"
+						data-bs-target="#ModalFormLogin">
+						Iniciar sesión
+					</button>
 				</form>
-			  </div>
 			</div>
-		  </div>
-	
-		  <!--Links-->
-		  <div class="col-lg-6 col-md-12">
-			<div class="row">
-			  <div class="col-4">
-				<h4><i class="bi bi-facebook"></i> Facebook</h4>
-				<a>Haciendo click aquí</a>
-			  </div>
-			  <div class="col-8">
-				<h4><i class="bi bi-airplane-fill"></i> Sucursales y aeropuertos</h4>
-				<a>ingresando aquí</a>
-			  </div>
+		</div>
+	</nav>
+
+	<!--Modal, Formulario de registro-->
+	<div class="modal fade" id="ModalFormRegistro" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+		aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h1 class="modal-title fs-5" id="staticBackdropLabel">Registro</h1>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<form class="was-validated" id="form-registro">
+						<div class="row mb-2">
+							<label for="nombre" class="col-sm-12 col-form-label">Nombre</label>
+							<div class="col-sm-12">
+								<input type="text" class="form-control" id="nombre" data-bs-toggle="tooltip"
+									data-bs-placement="top" data-bs-title="Este campo es obligatorio" required></input>
+							</div>
+						</div>
+						<div class="row mb-2">
+							<label for="apellido" class="col-sm-12 col-form-label">Apellido</label>
+							<div class="col-sm-12">
+								<input type="text" class="form-control" id="apellido" data-bs-toggle="tooltip"
+									data-bs-placement="top" data-bs-title="Este campo es obligatorio" required></input>
+							</div>
+						</div>
+						<div class="row mb-2">
+							<label for="dni" class="col-sm-12 col-form-label">DNI</label>
+							<div class="col-sm-12">
+								<input type="number" class="form-control" id="dni" data-bs-toggle="tooltip"
+									data-bs-placement="top" data-bs-title="Este campo es obligatorio" required></input>
+							</div>
+						</div>
+						<div class="row mb-2">
+							<label for="email" class="col-sm-12 col-form-label">E-mail</label>
+							<div class="col-sm-12">
+								<input type="email" class="form-control" id="email" data-bs-toggle="tooltip"
+									data-bs-placement="top" data-bs-title="Este campo es obligatorio" required></input>
+							</div>
+						</div>
+						<div class="row mb-2">
+							<label for="fechaNacimiento" class="col-sm-12 col-form-label">Fecha de Nacimiento</label>
+							<div class="col-sm-12">
+								<input type="date" class="form-control" id="fechaNacimiento" data-bs-toggle="tooltip"
+									data-bs-placement="top" data-bs-title="Este campo es obligatorio" required></input>
+								<div class="invalid-feedback" id="fechaNacimientoFeedback"></div>
+							</div>
+						</div>
+						<div class="row mb-2">
+							<label for="pais" class="col-sm-12 col-form-label">País</label>
+							<div class="col-sm-12">
+								<select class="form-select" id="pais" name="pais" data-bs-toggle="tooltip"
+									data-bs-placement="top" data-bs-title="Este campo es obligatorio" required>
+									<option selected disabled value="">Seleccionar país</option>
+									<option value="Argentina">Argentina</option>
+									<option value="Brasil">Brasil</option>
+									<option value="Chile">Chile</option>
+									<option value="Colombia">Colombia</option>
+									<option value="México">México</option>
+								</select>
+							</div>
+						</div>
+						<div class="row mb-2">
+							<label for="provincia" class="col-sm-12 col-form-label">Provincia</label>
+							<div class="col-sm-12">
+								<select class="form-select" id="provincia" name="provincia" data-bs-toggle="tooltip"
+									data-bs-placement="top" data-bs-title="Este campo es obligatorio" required>
+									<option selected disabled value="">Seleccionar provincia</option>
+									<option value="Buenos Aires">Buenos Aires</option>
+									<option value="Córdoba">Córdoba</option>
+									<option value="Santa Fe">Santa Fe</option>
+									<option value="Mendoza">Mendoza</option>
+									<option value="Tucumán">Tucumán</option>
+								</select>
+							</div>
+						</div>
+						<div class="row mb-2">
+							<div class="col-sm-12">
+								<div class="form-check">
+									<input type="checkbox" class="form-check-input" id="terminos-y-condiciones"
+										name="terminos-y-condiciones" />
+									<label class="form-check-label" for="terminos-y-condiciones">Acepto
+										los términos y condiciones</label>
+									<div class="invalid-feedback" id="terminosFeedback"></div>
+								</div>
+							</div>
+						</div>
+						<div class="row mb-2">
+							<div class="col-sm-12">
+								<button type="submit" class="btn btn-nro-tres" id="registrarse" name="registrarse">
+									Registrarse
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn active" data-bs-dismiss="modal">
+						Cancelar
+					</button>
+				</div>
 			</div>
-		  </div>
+		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="ModalFormLogin" tabindex="-1" aria-labelledby="ModalFormLoginLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="ModalFormLoginLabel">Iniciar sesión</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<!-- Formulario de inicio de sesión -->
+					<form class="was-validated" id="form-login">
+						<div class="mb-3">
+							<label for="emailLogin" class="col-sm-12 col-form-label">Email</label>
+							<div class="col-sm-12">
+								<input type="email" class="form-control" id="emailLogin" data-bs-toggle="tooltip"
+									data-bs-placement="top" data-bs-title="Este campo es obligatorio" required></input>
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="contraseniaLogin" class="col-sm-12 col-form-label">Contraseña</label>
+							<div class="col-sm-12">
+								<input type="password" class="form-control" id="contraseniaLogin"
+									data-bs-toggle="tooltip" data-bs-placement="top"
+									data-bs-title="Este campo es obligatorio" required></input>
+							</div>
+						</div>
+						<div class="mb-3 form-check">
+							<input type="checkbox" class="form-check-input" id="exampleCheck1">
+							<label class="form-check-label" for="exampleCheck1">Recordar contraseña</label>
+						</div>
+						<button type="button" class="btn btn-nro-tres" id="login-button">Iniciar sesión</button>
+						<button type="button" class="btn" id="recuperar-password-button">¿Olvidaste tu
+							contraseña?</button>
+					</form>
+					<!-- Formulario de recuperar contraseña -->
+					<form id="form-recuperar-password" class="none">
+						<div class="mb-3">
+							<label for="exampleInputEmail2" class="form-label">Correo electrónico</label>
+							<input type="email" class="form-control" id="exampleInputEmail2"
+								aria-describedby="emailHelp">
+							<div id="emailHelp" class="form-text">Introduce tu correo electrónico para recuperar tu
+								contraseña.</div>
+						</div>
+						<button type="button" class="btn btn-nro-tres" id="password-button">Enviar contraseña</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<main class="container consulta-pasaje-presentacion">
+		<h1 class="text-center mb-3">Detalle de Producto</h1>
+		<div class="row mb-2">
+			<div class="col-lg-8 col-md-12">
+				<section class="carousel slide" id="carouselMain">
+					<div class="carousel-indicators">
+						<button type="button" data-bs-target="#carouselMain" data-bs-slide-to="0"
+							aria-label="Slide 1"></button>
+						<button type="button" data-bs-target="#carouselMain" data-bs-slide-to="1" class="active"
+							aria-current="true" aria-label="Slide 2"></button>
+						<button type="button" data-bs-target="#carouselMain" data-bs-slide-to="2"
+							aria-label="Slide 3"></button>
+					</div>
+					<div class="carousel-inner">
+						<div class="carousel-item carousel-item-detalle_producto">
+							<img src="img/DetallesProducto/mendoza-1.jfif" class="d-block" alt="imagen de mendoza">
+						</div>
+						<div class="carousel-item carousel-item-detalle_producto active">
+							<img src="img/DetallesProducto/mendoza-2.jfif" class="d-block" alt="imagen de Nueva York">
+						</div>
+						<div class="carousel-item carousel-item-detalle_producto">
+							<img src="img/DetallesProducto/mendoza-3.jfif" class="d-block" alt="imagen de Montevideo">
+						</div>
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carouselMain"
+						data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carouselMain"
+						data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</section>
+			</div>
+			<div class="col-lg-4 col-md-12 mt-2">
+				<h2>¡Vuela a Mendoza con descuentos increíbles en vuelos de primera categoría!</h2>
+				<p>¿Quieres visitar la hermosa ciudad de Mendoza? ¡Aprovecha nuestras promociones de
+					vuelos de primera categoría con descuentos increíbles! Descubre los viñedos, la cultura y la
+					belleza natural de Mendoza con la comodidad y el lujo de nuestros vuelos de primera categoría.
+					¡No te pierdas esta oportunidad única de viajar a Mendoza con estilo!</p>
+			</div>
+		</div>
+		<div>
+			<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+				<li class="col-lg-1 col-md-2 col-2" role="presentation">
+					<button class="btn btn-md btn-nro-cuatro active" id="pills-Ida-tab" data-bs-toggle="pill" data-bs-target="#pills-Ida"
+						type="button" role="tab" aria-controls="pills-Ida" aria-selected="true">
+						Ida
+					</button>
+				</li>
+				<li class="col-lg-3 col-md-3 col-4 nav-item" role="presentation">
+					<button class="btn btn-md btn-nro-cuatro" id="pills-Ida_y_Vuelta-tab" data-bs-toggle="pill"
+						data-bs-target="#pills-Ida_y_Vuelta" type="button" role="tab" aria-controls="pills-Ida_y_Vuelta"
+						aria-selected="false">
+						Ida y Vuelta
+					</button>
+				</li>
+			</ul>
+			<div class="tab-content" id="pills-tabContent">
+				<div class="tab-pane fade show active" id="pills-Ida" role="tabpanel" aria-labelledby="pills-Ida-tab"
+					tabindex="0">
+					<!--Ida-->
+					<form class="row">
+						<div class="col-lg-6">
+							<div class="form-floating mb-3">
+								<input type="date" class="form-control form-control-lg" id="vueloInputFecha"
+									placeholder="Fecha">
+								<label for="vueloInputFecha" class="form-label">Fecha</label>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-floating mb-3">
+								<select class="form-select form-control-lg" id="vueloInputClase" aria-label="Clase">
+									<option selected>Seleccione el tipo de Clase</option>
+									<option value="economy">Economy</option>
+									<option value="premium-economy">Premium Economy</option>
+									<option value="business">Business</option>
+								</select>
+								<label for="vueloInputClase" class="form-label">Clase</label>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-floating mb-3">
+								<select class="form-select form-control-lg" id="vueloInputTarjeta" aria-label="Tarjeta">
+									<option selected>Seleccione la tarjeta de crédito</option>
+									<option value="american-express">American Express</option>
+									<option value="visa">Visa</option>
+									<option value="mastercard">Mastercard</option>
+									<option value="cabal">Cabal</option>
+									<option value="patagonia-365">Patagonia 365</option>
+								</select>
+								<label for="vueloInputTarjeta" class="form-label">Tarjeta de Crédito</label>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-floating mb-3">
+								<select class="form-select form-control-lg" id="vueloInputPago" aria-label="Pago">
+									<option selected>Seleccione la forma de Pago</option>
+									<option value="3-cuotas">3 Cuotas sin interés</option>
+									<option value="6-cuotas">6 Cuotas sin interés</option>
+									<option value="9-cuotas">9 Cuotas sin interés</option>
+									<option value="12-cuotas">12 Cuotas sin interés</option>
+								</select>
+								<label for="vueloInputPago" class="form-label">Forma de Pago</label>
+							</div>
+						</div>
+						<br>
+						<div class="mb-3">
+							<h2 class="col-lg-2 col-sm-6">ARS 14.646</h2>
+							<button type="button" class="col-lg-2 col-sm-6 btn btn-nro-cuatro" data-bs-toggle="modal"
+								data-bs-target="#ModalFormLogin">Confirmar Comprar</button>
+						</div>
+						<div>
+							<a class="col-lg-2 col-sm-6 btn btn-nro-tres" href="index.html">Cancelar Comprar</a>
+						</div>
+					</form>
+				</div>
+				<div class="tab-pane fade" id="pills-Ida_y_Vuelta" role="tabpanel"
+					aria-labelledby="pills-Ida_y_Vuelta-tab" tabindex="0">
+					<!--Ida y Vuelta-->
+					<form class="row">
+						<div class="col-lg-4">
+							<div class="form-floating mb-3">
+								<input type="date" class="form-control form-control-lg" id="vueloInputPartida"
+									placeholder="Partida">
+								<label for="vueloInputPartida" class="form-label">Partida</label>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-floating mb-3">
+								<input type="date" class="form-control form-control-lg" id="vueloInputRegreso"
+									placeholder="Regreso">
+								<label for="vueloInputRegreso" class="form-label">Regreso</label>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-floating mb-3">
+								<select class="form-select form-control-lg" id="vueloInputClase" aria-label="Clase">
+									<option selected>Seleccione el tipo de Clase</option>
+									<option value="economy">Economy</option>
+									<option value="premium-economy">Premium Economy</option>
+									<option value="business">Business</option>
+								</select>
+								<label for="vueloInputClase" class="form-label">Clase</label>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-floating mb-3">
+								<select class="form-select form-control-lg" id="vueloInputTarjeta" aria-label="Tarjeta">
+									<option selected>Seleccione la tarjeta de crédito</option>
+									<option value="american-express">American Express</option>
+									<option value="visa">Visa</option>
+									<option value="mastercard">Mastercard</option>
+									<option value="cabal">Cabal</option>
+									<option value="patagonia-365">Patagonia 365</option>
+								</select>
+								<label for="vueloInputTarjeta" class="form-label">Tarjeta de Crédito</label>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="form-floating mb-3">
+								<select class="form-select form-control-lg" id="vueloInputPago" aria-label="Pago">
+									<option selected>Seleccione la forma de Pago</option>
+									<option value="3-cuotas">3 Cuotas sin interés</option>
+									<option value="6-cuotas">6 Cuotas sin interés</option>
+									<option value="9-cuotas">9 Cuotas sin interés</option>
+									<option value="12-cuotas">12 Cuotas sin interés</option>
+								</select>
+								<label for="vueloInputPago" class="form-label">Forma de Pago</label>
+							</div>
+						</div>
+						<br>
+						<div class="mb-3">
+							<h2 class="col-lg-2 col-sm-6">ARS 14.646</h2>
+							<button type="button" class="col-lg-2 col-sm-6 btn btn-nro-cuatro" data-bs-toggle="modal"
+								data-bs-target="#ModalFormLogin">Confirmar Comprar</button>
+						</div>
+						<div>
+							<a class="col-lg-2 col-sm-6 btn btn-nro-tres" href="index.html">Cancelar Comprar</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<section class="container mb-3">
+		<h2 class="text-center">Preguntas Frecuentes</h2>
+		<div class="row" id="accordion">
+			<div class="col-12 card preguntas-frecuentes">
+				<div class="card-header" id="heading-1">
+					<h2 class="mb-0">
+						<button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1"
+							aria-expanded="true" aria-controls="collapseOne">
+							¿Cuáles son los requisitos de documentación para viajar en avión?
+						</button>
+					</h2>
+				</div>
+				<div id="collapse-1" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordion">
+					<div class="card-body">
+						<p>Para viajar en avión, necesitarás llevar contigo un documento de identidad válido, como
+							un pasaporte o una cédula de identidad. Además, si estás viajando internacionalmente, es
+							posible que necesites obtener una visa o un permiso de viaje según el país de destino.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 card preguntas-frecuentes">
+				<div class="card-header" id="heading-2">
+					<h2 class="mb-0">
+						<button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2"
+							aria-expanded="false" aria-controls="collapseTwo">
+							¿Cuánto equipaje puedo llevar en un vuelo?
+						</button>
+					</h2>
+				</div>
+				<div id="collapse-2" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
+					<div class="card-body">
+						<p>Las aerolíneas tienen diferentes políticas de equipaje, pero en general, se permiten una
+							o dos piezas de equipaje facturado, dependiendo de la clase de vuelo y la aerolínea.
+							Además, también se permite llevar un equipaje de mano, que debe cumplir con ciertas
+							dimensiones y restricciones de peso.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 card preguntas-frecuentes">
+				<div class="card-header" id="heading-3">
+					<h2 class="mb-0">
+						<button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3"
+							aria-expanded="false" aria-controls="collapseTwo">
+							¿Cuáles son las medidas de seguridad en los aeropuertos?
+						</button>
+					</h2>
+				</div>
+				<div id="collapse-3" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
+					<div class="card-body">
+						<p>Los aeropuertos tienen medidas de seguridad para garantizar la seguridad de los pasajeros
+							y prevenir cualquier amenaza. Estas medidas pueden incluir controles de seguridad,
+							escaneo de equipaje, revisión de documentos de identidad y detección de metales. Es
+							importante seguir las instrucciones del personal de seguridad y cumplir con todas las
+							regulaciones.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 card preguntas-frecuentes">
+				<div class="card-header" id="heading-4">
+					<h2 class="mb-0">
+						<button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4"
+							aria-expanded="false" aria-controls="collapseTwo">
+							¿Cuánto tiempo antes debo llegar al aeropuerto antes de mi vuelo?
+						</button>
+					</h2>
+				</div>
+				<div id="collapse-4" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordion">
+					<div class="card-body">
+						<p>Se recomienda llegar al aeropuerto al menos 2 horas antes de la salida programada de tu
+							vuelo. Esto te dará suficiente tiempo para realizar el check-in, pasar por los controles
+							de seguridad y abordar el avión sin problemas. Sin embargo, en casos de vuelos
+							internacionales, es posible que sea necesario llegar con más anticipación.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="container destinos-presenteacion">
+		<h3 class="text-center">Productos Destacados</h3>
+		<div class="row">
+			<div class="col-lg-4 col-md-6 mb-3">
+				<div class="card w-100">
+					<img src="img/Destinos-Nacionales/trelew.jpg" class="card-img-top card-ajustar-img"
+						alt="Imagen de trelew" />
+					<div class="card-body">
+						<span>Economy</span>
+						<h5 class="card-title">Desde Buenos Aires</h5>
+						<h4 class="card-text">a Trelew</h4>
+						<div class="row">
+							<h6 class="col-6">ARS 20.800</h6>
+							<a class="col-6 btn btn-nro-tres" href="verMasVueloMendoza.html">Reserva</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 mb-3">
+				<div class="card w-100">
+					<img src="img/Destinos-Nacionales/VillaCarlosPaz.jfif" class="card-img-top card-ajustar-img"
+						alt="Imagen de Villa Carlos Paz" />
+					<div class="card-body">
+						<span>Economy</span>
+						<h5 class="card-title">Desde Buenos Aires</h5>
+						<h4 class="card-text">a Villa Carlos Paz</h4>
+						<div class="row">
+							<h6 class="col-6">ARS 12.300</h6>
+							<a class="col-6 btn btn-nro-tres" href="verMasVueloMendoza.html">Reserva</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6">
+				<div class="card w-100">
+					<img src="img/Destinos-Nacionales/neuqeun.jfif" class="card-img-top card-ajustar-img"
+						alt="Imagen de neuquen" />
+					<div class="card-body">
+						<span>Economy</span>
+						<h5 class="card-title">Desde Buenos Aires</h5>
+						<h4 class="card-text">a Neuquén</h4>
+						<div class="row">
+							<h6 class="col-6">ARS 15.300</h6>
+							<a class="col-6 btn btn-nro-tres" href="verMasVueloMendoza.html">Reserva</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!--Seccion Ayuda-->
+	<section class="container-fluid mt-4 mb-3 ayuda-presentacion" id="SeccionAyuda">
+		<div class="row">
+			<h2 class="col-12 text-center">¿Necesitás ayuda con tu viaje?</h2>
+			<p class="col-12 text-center">Encontrá toda la información que necesitás en nuestro centro de ayuda.</p>
+		</div>
+		<div class="row remover">
+			<ul class="col-lg-3 col-md-6 col-sm-12">
+				<h3>Políticas de equipaje</h3>
+				<li>Franquicias de equipajes</li>
+				<li>Exceso de equipaje</li>
+				<li>Equipaje adicional</li>
+				<li>Artículos restringidos</li>
+			</ul>
+
+			<ul class="col-lg-3 col-md-6 col-sm-12">
+				<h3>Información para tu viaje</h3>
+				<li>Asistencias</li>
+				<li>Niños y bebés</li>
+				<li>Mascotas</li>
+			</ul>
+
+			<ul class="col-lg-3 col-md-6 col-sm-12">
+				<h3>Preguntas frecuentes</h3>
+				<li>Aerolíneas Look Plus</li>
+				<li>Check In</li>
+				<li>Reservas y Servicios</li>
+			</ul>
+
+			<ul class="col-lg-3 col-md-6 col-sm-12">
+				<h3>Servicios e información importante</h3>
+				<li>Estado de vuelo</li>
+				<li>Cambios on line</li>
+				<li>Procedimiento de devolución de tasa aeroportuaria</li>
+				<li>Información importante para pasajeros ingresando a México</li>
+				<li>Información judicial-Pasajeros no show</li>
+				<li>Impuesto PAIS</li>
+			</ul>
+		</div>
+	</section>
+
+	<!-- Seccion Enlaces sociales y contactos-->
+	<footer class="container enlaces_sociales-contactos" id="SeccionContactos">
+		<div class="row">
+			<!--Institucional-->
+			<div class="col-lg-6 col-md-12 remover">
+				<h3>Institucional</h3>
+				<div class="row no-item">
+					<ul class="col-6">
+						<li>Compañía</li>
+						<li>Contenidos Institucionales</li>
+						<li>Proveedor</li>
+					</ul>
+					<ul class="col-6">
+						<li>SkyTeam</li>
+						<li>Aerolíneas</li>
+						<li>Somos AR</li>
+					</ul>
+				</div>
+			</div>
+			<!--Comunicate con nosotros-->
+			<div class="col-lg-6 col-md-12">
+				<div class="row">
+					<h3 class="col-12"><i class="bi bi-person-workspace"></i> Comunicate con nosotros</h3>
+				</div>
+				<div class="row">
+					<div class="col-6">
+						<h4><i class="bi bi-telephone-plus-fill"></i> Contact Center:</h4>
+						<p>0810-222-86527 Lun a Vie de 8 a 20hs. Sáb, Dom y feriados de 8 a 14 hs.</p>
+					</div>
+					<div class="col-6">
+						<h4><i class="bi bi-whatsapp"></i> WhatsApp</h4>
+						<p> 0810-222-86527 Lun a Vie de 8 a 20hs. an Sáb, Dom y feriados de 8 a 14 hs.</p>
+					</div>
+				</div>
+			</div>
+
+			<!--Suscribirme Suscribirme-->
+			<div class="col-lg-6 col-md-12">
+				<p><i class="tam-icon-suscrib bi bi-envelope-plus-fill"></i> Suscribite para recibir nuestras
+					promociones</p>
+				<p>
+					<button class="btn active" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample"
+						aria-expanded="false" aria-controls="collapseExample">
+						Suscribirme
+					</button>
+				</p>
+				<div class="container collapse" id="collapseExample">
+					<div class="row card card-body">
+						<form>
+							<div class="col-12 mb-3">
+								<label for="nombreSuscrib" class="form-label">Nombre</label>
+								<input type="text" class="form-control" id="nombreSuscrib"
+									placeholder="Ingresa tu nombre" required>
+							</div>
+							<div class="col-12 mb-3">
+								<label for="correoSuscrib" class="form-label">Correo electrónico</label>
+								<input type="email" class="form-control" id="correoSuscrib"
+									placeholder="Ingresa tu correo electrónico" required>
+							</div>
+							<button type="submit" class="btn btn-primary">Suscribirse</button>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<!--Links-->
+			<div class="col-lg-6 col-md-12">
+				<div class="row">
+					<div class="col-4">
+						<h4><i class="bi bi-facebook"></i> Facebook</h4>
+						<a>Haciendo click aquí</a>
+					</div>
+					<div class="col-8">
+						<h4><i class="bi bi-airplane-fill"></i> Sucursales y aeropuertos</h4>
+						<a>ingresando aquí</a>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="row min-tam">
-		  <p class="col-12"><i class="bi bi-stars"></i> Aerolíneas Look <i class="bi bi-stars"></i></p>
-		  <p class="col-12">Legales y condiciones Generales de Transporte !</i></p>
-		  <p class="col-12"><i class="bi bi-qr-code"></i></p>
-		  <p class="col-12">Sitio Oficial de Aerolineas Look S.A <i class="bi bi-check-circle"></i></p>
-		  <p class="col-12">1996-2023</p>
+			<p class="col-12"><i class="bi bi-stars"></i> Aerolíneas Look <i class="bi bi-stars"></i></p>
+			<p class="col-12">Legales y condiciones Generales de Transporte !</i></p>
+			<p class="col-12"><i class="bi bi-qr-code"></i></p>
+			<p class="col-12">Sitio Oficial de Aerolineas Look S.A <i class="bi bi-check-circle"></i></p>
+			<p class="col-12">1996-2023</p>
 		</div>
-	  </footer>
+	</footer>
 </body>
 <!--Inicializando los tooltip-->
 <script>
 	var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 	var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-	  return new bootstrap.Tooltip(tooltipTriggerEl)
+		return new bootstrap.Tooltip(tooltipTriggerEl)
 	})
-  </script>
-  
-  <!--Script para validar la fecha de nacimiento y los terminos y condiciones del formulario de registro-->
-  <script>
+</script>
+
+<!--Script para validar la fecha de nacimiento y los terminos y condiciones del formulario de registro-->
+<script>
 	const form = document.getElementById('form-registro');
 	form.addEventListener('submit', function (event) {
-	  event.preventDefault();
-	  // Se ejecutaran las validaciones
-	  const fechaNacimiento = document.getElementById('fechaNacimiento').value;
-	  const hoy = new Date();
-	  const fechaNacimientoDate = new Date(fechaNacimiento);
-	  const edad = hoy.getFullYear() - fechaNacimientoDate.getFullYear();
-	  const mes = hoy.getMonth() - fechaNacimientoDate.getMonth();
-	  if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimientoDate.getDate())) {
-		//Si la persona aún no ha cumplido años en el mes actual, entonces se resta 1 a la edad.
-		edad--;
-	  }
-	  if (edad < 18) {
-		document.getElementById('fechaNacimiento').classList.add('is-invalid');
-		document.getElementById('fechaNacimientoFeedback').textContent = 'Debes ser mayor de edad';
-	  } else {
-		document.getElementById('fechaNacimiento').classList.remove('is-invalid');
-		document.getElementById('fechaNacimientoFeedback').textContent = '';
-	  }
-	  const terminos = document.getElementById('terminos-y-condiciones');
-	  if (!terminos.checked) {
-		document.getElementById('terminos-y-condiciones').classList.add('is-invalid');
-		document.getElementById('terminosFeedback').textContent = 'Debes aceptar los términos y condiciones';
-	  } else {
-		document.getElementById('terminos-y-condiciones').classList.remove('is-invalid');
-		document.getElementById('terminosFeedback').textContent = '';
-	  }
+		event.preventDefault();
+		// Se ejecutaran las validaciones
+		const fechaNacimiento = document.getElementById('fechaNacimiento').value;
+		const hoy = new Date();
+		const fechaNacimientoDate = new Date(fechaNacimiento);
+		const edad = hoy.getFullYear() - fechaNacimientoDate.getFullYear();
+		const mes = hoy.getMonth() - fechaNacimientoDate.getMonth();
+		if (mes < 0 || (mes === 0 && hoy.getDate() < fechaNacimientoDate.getDate())) {
+			//Si la persona aún no ha cumplido años en el mes actual, entonces se resta 1 a la edad.
+			edad--;
+		}
+		if (edad < 18) {
+			document.getElementById('fechaNacimiento').classList.add('is-invalid');
+			document.getElementById('fechaNacimientoFeedback').textContent = 'Debes ser mayor de edad';
+		} else {
+			document.getElementById('fechaNacimiento').classList.remove('is-invalid');
+			document.getElementById('fechaNacimientoFeedback').textContent = '';
+		}
+		const terminos = document.getElementById('terminos-y-condiciones');
+		if (!terminos.checked) {
+			document.getElementById('terminos-y-condiciones').classList.add('is-invalid');
+			document.getElementById('terminosFeedback').textContent = 'Debes aceptar los términos y condiciones';
+		} else {
+			document.getElementById('terminos-y-condiciones').classList.remove('is-invalid');
+			document.getElementById('terminosFeedback').textContent = '';
+		}
 	});
-  </script>
-  
-  <!--Script para recuperar la contraseña-->
-  <script>
+</script>
+
+<!--Script para recuperar la contraseña-->
+<script>
 	// Evento de clic para el botón de recuperar contraseña
 	document.getElementById("recuperar-password-button").addEventListener("click", function () {
-	  document.getElementById("form-login").style.display = "none";
-	  document.getElementById("form-recuperar-password").style.display = "block";
+		document.getElementById("form-login").style.display = "none";
+		document.getElementById("form-recuperar-password").style.display = "block";
 	});
 	// Evento de clic para el botón de enviar contraseña
 	document.getElementById("password-button").addEventListener("click", function () {
-	  // Aquí se puede agregar la lógica para enviar la contraseña al correo electrónico del usuario
-	  document.getElementById("form-recuperar-password").style.display = "none";
-	  document.getElementById("form-login").style.display = "block";
-	  document.getElementById("ModalFormLogin").modal("hide");
+		// Aquí se puede agregar la lógica para enviar la contraseña al correo electrónico del usuario
+		document.getElementById("form-recuperar-password").style.display = "none";
+		document.getElementById("form-login").style.display = "block";
+		document.getElementById("ModalFormLogin").modal("hide");
 	});
-  </script>
+</script>
+
 </html>

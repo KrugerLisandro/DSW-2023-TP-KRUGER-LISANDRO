@@ -1,0 +1,381 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+/* 
+Paleta de colores principal.
+https://colorhunt.co/palette/111f4df2f4f7e43a19020205
+https://colorhunt.co/palette/000000cf0a0adc5f00eeeeee
+
+sass --watch scss/scss-style.scss:css/css-style.css
+*/
+
+/*$primary : #06113C; 
+$secondary: #FF8C32;
+$success: #dddddd7c;
+$light: #FCFAF1;
+$dark: #020205;
+$info: #DDDDDD;
+$danger: #EEEEEE;
+$warning:#e4cd05;*/
+
+body{
+    font-family: 'Lato', sans-serif;
+    background-color: $light;
+    color: $dark;
+}
+
+/*PRESENTACION*/
+.presentacion {
+    text-shadow: 2px 2px 4px #FFFFFF;
+    /*Sombra al texto*/
+    background-image: url("/img/fondo-logo/fondo.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow: hidden;
+    h1 {
+        display: flex;
+        justify-content: end;
+    }
+    p {
+        display: flex;
+        align-items: end;
+        position: relative;
+        right: 1rem;
+    }
+}
+
+/*NAVEGACION*/
+.navegacion-menu{
+    background-color: $light;
+}
+
+.btn-nro-uno{
+    color: #020205;
+    &:hover{
+        background-color: $primary;
+        color: $light;
+        border-radius: 5px;
+    }
+}
+
+/*
+ES LO MISMO QUE ESTA ARRIBA.
+.navegacion-menu a:hover{
+   background-color: #111F4D;
+   color: #FCFAF1;
+    border-radius: 5px;
+}
+*/
+
+.btn-nro-dos{
+    border: solid 2px $primary;
+    &:hover{
+        background-color: $primary;
+        color: $secondary;
+        border-radius: 5px;
+    }
+}
+
+.none{
+    display: none;
+}
+
+/*HOME*/
+/*PRESENTACION-PROMOCIONES*/
+/*.home-presentacion img {
+    width: 100%;
+    height: auto;
+}*/
+
+.image-text-container {
+    width: 850px;
+    /* establece un ancho fijo */
+    display: flex;
+    /* utiliza el modelo de caja flexible para asegurarse de que el texto y la imagen estén lado a lado */
+    align-items: center;
+    /* centra verticalmente el contenido dentro del contenedor */
+    justify-content: center;
+    /* centra horizontalmente el contenido dentro del contenedor */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-item {
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/*PERTENECE A LA "verMasVueloMendoza.html"*/
+.carousel-item-detalle_producto {
+    img {
+        width: 800px;
+        height: 400px;
+        object-fit: cover;
+    }
+}
+
+.carousel-caption {
+    p {
+        word-wrap: break-word;
+    }
+}
+
+.carousel-control-prev-icon {
+    background-color: $primary;
+    border-radius: 5px;
+}
+
+.carousel-control-next-icon {
+    background-color: $primary;
+    border-radius: 5px;
+}
+
+.fondo-letras{
+    background-color: $success;
+    color: $primary;
+    padding: 10px;
+}
+
+.promocion-detalles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    
+    /*Es una propiedad de CSS que se usa para centrar un elemento tanto horizontal como verticalmente dentro de su contenedor*/
+} 
+
+.btn-nro-tres{
+    background-color: $secondary;
+    color: #020202;
+    &:hover{
+        background-color: $secondary;
+    }
+    &.active{
+        background-color: $secondary;
+    }
+}
+
+/*CONSULTA DE PASAJES*/
+.consulta-pasaje-presentacion{
+    background-color: $info;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.btn-nro-cuatro {
+    background-color: $primary;
+    color: #EEEEEE;
+    &:hover {
+      background-color: $primary;
+      color: $secondary;
+    }
+    &.active{
+        background-color: $primary;
+        color: $secondary;
+    }
+}
+  
+/* ES LO MISMO QUE ESTA ARRIBA
+.consulta-pasaje-presentacion .btn:hover{
+    background-color: #111F4D;
+    color: #DC5F00;
+}
+*/
+
+/*BANNERS Y PROMOCIONES*/
+.banner {
+    background-image: url("/img/Banners&Promociones/promo_3.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.banner-texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+        h2{
+            text-align: center;
+            color: $secondary;
+            background-color: $primary;
+        }
+        p{
+            text-align: center;
+            color: $secondary;
+            background-color: $primary;
+        }
+}
+
+/*LO MISMO QUE ESTA ARRIBA
+.banner-texto h2, .banner-texto p {
+    text-align: center;
+    color: #DC5F00;
+    background-color: #111F4D;
+}
+*/
+
+.banner-texto {
+    i{
+        font-size: 2rem;
+        color: $warning;
+    }
+}
+
+/*
+.banner-texto i {
+    font-size: 2rem;
+    color: #ebd408;
+}*/
+
+/*DESTINOS - CATEGORIAS*/
+.destinos-presenteacion{
+    background-color: $info;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.btn-nro-cinco{
+    background-color: $primary;
+    color: #EEEEEE;
+    &:hover{
+        background-color: $secondary;
+        color: #020205;
+    }
+    &.active{
+        background-color: #111F4D;
+        color: #EEEEEE;
+    }
+}
+
+/*
+.destinos-presenteacion .btn:hover{
+    background-color: #DC5F00;
+    color: #020205;
+}
+*/
+
+.card-ajustar-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/*SERVICIOS ADICIONALES*/
+.item-servicio {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  margin-top: 100px;
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    i{
+        margin-bottom: 8px;
+    }
+    p{
+        margin-bottom: 8px;
+        color: $primary;
+    }
+  }
+}
+
+.color-titulo{
+    color: $primary;
+    background-color: $secondary;
+}
+
+/*ICONOS*/
+.tam-icon-serv{
+    font-size: 30px;
+    color: $warning;
+}
+
+
+/*SERVICIOS LUXX PLUS*/
+.item-Luxx{
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  margin-top: 100px;
+  .item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        i{
+            margin-bottom: 8px;
+        }
+    }
+    p {
+        margin-bottom: 8px;
+        color: $primary;
+    }
+}
+
+.btn-nro-seis{
+    color: $danger;
+    background-color: $primary;
+    &:hover{
+        background-color: $primary;
+        color: $warning;
+    }
+}
+
+/*ICONOS*/
+.tam-icon-luxx{
+    font-size: 30px;
+    color: $warning;
+}
+
+/*SECCION AYUDA*/
+.ayuda-presentacion{
+    background-color: $primary;
+    color: $danger;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*SECCION ENLACES SOCIALES Y CONTACTOS*/
+.enlaces_sociales-contactos{
+    background-color: $info;
+    color: $primary;
+}
+
+.remover{
+    li{
+        list-style-type: none;
+    }
+}
+
+.tam-icon-suscrib{
+    font-size: 20px;
+}
+
+/*Disminuir el tamaño*/
+.min-tam{
+    text-align: center;
+    font-size: 10px;
+}
+
+/*SECCIN DE PREGUNTAS FRECUENTES*/
+.preguntas-frecuentes{
+    background-color: $light;
+    color: $primary;
+}
